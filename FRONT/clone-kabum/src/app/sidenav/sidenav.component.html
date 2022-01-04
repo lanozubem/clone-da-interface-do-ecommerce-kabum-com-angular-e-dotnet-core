@@ -1,0 +1,113 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [(opened)]="opened">
+
+        <div class="sidenav">
+
+            <!-- SIDENAV USER -->
+            <div class="sidenav-profile">
+                <div class="profile-icon">
+                    <span class="material-icons">
+                        account_circle
+                    </span>
+                </div>
+
+                <strong>Olá. Faça seu login</strong>
+
+                <button (click)="sidenav.close()">
+                    <span class="material-icons">
+                        close
+                    </span>
+                </button>
+            </div>
+
+            <!-- LISTA DE NAVEGAÇÃO DA SIDENAV -->
+            <mat-nav-list class="sidenav-list">
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        person
+                    </span>
+                    <a href="">Minha conta</a>
+                </mat-list-item>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        shopping_basket
+                    </span>
+                    <a href="">Meus pedidos</a>
+                </mat-list-item>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        favorite
+                    </span>
+                    <a href="">Favoritos</a>
+                </mat-list-item>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        support_agent
+                    </span>
+                    <a href="">Atendimento</a>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        location_searching
+                    </span>
+                    <a href="">Mais procurados</a>
+                </mat-list-item>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        bolt
+                    </span>
+                    <a href="">Acabaram de chegar</a>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        local_offer
+                    </span>
+                    <a href="">Oferta do dia</a>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        star_purple500
+                    </span>
+                    <a href="">Seja Prime Ninja</a>
+                </mat-list-item>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        credit_card
+                    </span>
+                    <a href="">Cartão KaBuM!</a>
+                </mat-list-item>
+
+                <mat-list-item class="sidenav-list-item">
+                    <span class="material-icons">
+                        monetization_on
+                    </span>
+                    <a href="">PIX</a>
+                </mat-list-item>
+            </mat-nav-list>
+
+            <!-- BTNS -->
+            <mat-action-list class="btns">
+                <button routerLink="login">LOGIN</button>
+                <button routerLink="login">CADASTRO</button>
+            </mat-action-list>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

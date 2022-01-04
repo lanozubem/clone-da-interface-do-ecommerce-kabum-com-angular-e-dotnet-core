@@ -1,0 +1,126 @@
+mat-sidenav-content,
+mat-sidenav {
+    overflow: hidden;
+}
+
+mat-sidenav {
+    padding: 20px;
+    background-color: #0060B1;
+    width: 25%;
+    position: fixed;
+}
+
+mat-sidenav button {
+    border: none;
+    background-color: transparent;
+    color: #CCDFEF;
+    outline: none;
+    font-size: 20px;
+}
+
+mat-divider {
+    background-color: #80B0D8;
+    width: 80%;
+    margin-left: 15px;
+}
+
+.sidenav,
+.sidenav-profile,
+.sidenav-profile-button,
+.btns {
+    display: flex;
+}
+
+.sidenav {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 550px;
+}
+
+/* SIDENAV USER */
+.sidenav-profile {
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    color: #FFF;
+    padding: 10px 0;
+    justify-content: space-evenly;
+}
+
+.sidenav-profile button {
+    align-items: center;
+    margin-left: 10px;
+}
+
+.profile-icon span {
+    font-size: 30px;
+    margin-right: 10px;
+    color: #c4c4c49f;
+    border: 2px solid #acacac;
+    border-radius: 50%;
+}
+
+/* MANIPULANDO A APARENCIA DO SCROLL-Y */
+::-webkit-scrollbar-track {
+    background-color: #1A70B9;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #80B0D8;
+}
+
+/* LISTA DE NAVEGAÇÃO DA SIDENAV  */
+.sidenav-list {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
+
+.sidenav-list-item {
+    margin: 10px 0;
+}
+
+.sidenav-list-item a {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.sidenav-list-item span {
+    color: #FFFF;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+/* BTNS */
+.btns {
+    padding: 10px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.btns button {
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.btns button:nth-child(1) {
+    background-color: #FF6500;
+    color: White;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
