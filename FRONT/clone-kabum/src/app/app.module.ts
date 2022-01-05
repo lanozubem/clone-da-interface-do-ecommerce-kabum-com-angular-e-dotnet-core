@@ -18,6 +18,7 @@ import { SliderComponent } from './slider/slider.component';
 import { FormsModule } from '@angular/forms';
 import { DepartamentsSliderComponent } from './departaments-slider/departaments-slider.component';
 import { BoxComponent } from './box/box.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BoxComponent } from './box/box.component';
     HomeComponent,
     SliderComponent,
     DepartamentsSliderComponent,
-    BoxComponent
+    BoxComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

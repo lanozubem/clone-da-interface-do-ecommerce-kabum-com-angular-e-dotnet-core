@@ -1,0 +1,267 @@
+a, img {
+    cursor: not-allowed;
+}
+
+/* footer-header */
+.footer-header {
+    background-color: #003A6A;
+    padding: 0 47px;
+    height: 90px;
+}
+
+.footer-header-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-header-sub-item {
+    height: 52px;
+    overflow: hidden;
+    line-height: .0vh;
+    color: #FFF;
+}
+
+.footer-header-sub-item h3 {
+    font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.footer-header-sub-item p {
+    font-size: 10px;
+}
+
+.footer-header-item input {
+    width: 310px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: none;
+}
+
+.footer-header-item button {
+    border: none;
+    color: #FFF;
+    padding: 12px 48px;
+    border-radius: 4px;
+    background-color: #FF5E00;
+}
+
+/* footer-body */
+
+.footer-body {
+    background-color: #004D8E;
+    padding: 0 47px;
+    height: 446px;
+}
+
+.footer-body {
+    overflow: hidden;
+    padding: 35px 75px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* pre-footer */
+
+.pre-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pre-footer-imagens {
+    width: 1216px;
+    height: 78px;
+    margin: auto 104px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pre-footer-imagens img:nth-child(4) {
+    height: 60px;
+    width: 57px;
+}
+
+/* footer-footer */
+
+.footer-footer {
+    background-color: #003A6A;
+    color: #FFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 16px 103px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+/* departaments */
+
+.departaments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.departamentsLinks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 381px;
+    width: 275px;
+    margin-right: 8px;
+    padding-bottom: 70px;
+}
+
+.departamentsLinks a {
+    line-height: 16px;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+/* novidadesEpromocoes */
+
+.novidadesEPromocoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 0;
+}
+
+.novidadesEPromocoesLinks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 381px;
+    width: 201px;
+    margin-right: 8px;
+}
+
+.novidadesEPromocoesLinks a {
+    line-height: 16px;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.novidadesEPromocoesLinks a:nth-child(6) {
+    margin-bottom: 40px;
+}
+
+/* institucional */
+
+.institucional {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 0;
+}
+
+.institucionalLinks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 381px;
+    width: 201px;
+    margin-right: 8px;
+}
+
+.institucionalLinks a {
+    line-height: 16px;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.institucionalLinks a:nth-child(8) {
+    margin-bottom: 40px;
+}
+
+/* minhaConta */
+
+.minhaConta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 0;
+}
+
+.minhaContaLinks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 381px;
+    width: 201px;
+    margin-right: 8px;
+}
+
+.minhaContaLinks a {
+    line-height: 16px;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.minhaContaLinks a:nth-child(2) {
+    margin-bottom: 37px;
+}
+
+.midiasSociais {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 128px;
+    height: 64px;
+    margin-bottom: 32px;
+}
+
+.midiasSociais i {
+    background-color: #FFF;
+    color: #004D8E;
+    padding: 10px;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.downloadLinks img {
+    width: 132px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+/* atendimento */
+
+.atendimento {
+    font-size: 12px;
+    color: white;
+}
+
+.atendimento .title {
+    margin: 0;
+    margin-top: 8px;
+}
