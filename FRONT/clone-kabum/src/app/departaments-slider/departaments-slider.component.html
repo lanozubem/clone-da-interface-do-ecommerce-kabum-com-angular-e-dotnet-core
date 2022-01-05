@@ -1,0 +1,32 @@
+<div class="geral">
+    <div class="departa-title">
+        <span class="material-icons">
+            list
+        </span>
+        DEPARTAMENTOS
+    </div>
+
+    <div id="carrossel">
+
+        <button (click)="navegateTo1(-110, -110)" class="btn-nav-left">
+            <span class="material-icons">
+                navigate_before
+            </span>
+        </button>
+
+        <div class="departa-slider">
+            <div class="card card-content" *ngFor="let categoria of categorias">
+                <p><strong>{{ categoria.name }}</strong></p>
+                <img src="{{ categoria.imageUrl }}" alt="">
+            </div>
+
+        </div>
+        
+        <button (click)="navegateTo1(110, 110)" class="btn-nav-right">
+            <span class="material-icons">
+                navigate_next
+            </span>
+        </button>
+
+    </div>
+</div>

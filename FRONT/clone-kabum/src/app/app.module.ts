@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './slider/slider.component';
 import { FormsModule } from '@angular/forms';
+import { DepartamentsSliderComponent } from './departaments-slider/departaments-slider.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     SidenavComponent,
     HeaderComponent,
     HomeComponent,
-    SliderComponent
+    SliderComponent,
+    DepartamentsSliderComponent
   ],
   imports: [
     BrowserModule,

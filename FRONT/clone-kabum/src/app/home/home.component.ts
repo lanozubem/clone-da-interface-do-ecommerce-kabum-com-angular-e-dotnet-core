@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
       "price": 5.544,
       "imageUrl": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/271830/Pc-Gamer-Completo-F-cil-I7-16GB-RAM-Gtx-1050ti-4GB-HD-1TB-Monitor-21-5-Teclado-Mouse-Headset-Fonte-500w_1639572203_gg.jpg"
     },
-  ]
+  ];
   
   constructor() { }
 

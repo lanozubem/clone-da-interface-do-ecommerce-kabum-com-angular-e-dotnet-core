@@ -66,15 +66,26 @@
     height: 475px;
     padding: 0 28px;
     margin: 0 auto;
+    margin-top: 8px;
+}
+
+.link-info {
+    float: right;
+    font-weight: 700;
+    color: #FF6500;
+    text-decoration: underline;
+    margin-right: 40px;
+    font-size: 16px;
+    margin-top: -10px;
 }
 
 /* Banners */
 .io {
     margin: 0 auto;
-    margin-bottom: 100px;
     background-color: #FFF;
     padding: 36px 50px;
     overflow: hidden;
+    margin-top: 46px;
 }
 
 .banners {
@@ -91,15 +102,4 @@
 
 .banner-item:nth-child(1) {
     padding: 0;
-}
-
-
-.link-info {
-    float: right;
-    font-weight: 700;
-    color: #FF6500;
-    text-decoration: underline;
-    margin-right: 40px;
-    font-size: 16px;
-    margin-top: -10px;
 }
