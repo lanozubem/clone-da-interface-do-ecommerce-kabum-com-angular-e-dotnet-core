@@ -9,11 +9,13 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 /* Angular Material */
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent
+    SidenavComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

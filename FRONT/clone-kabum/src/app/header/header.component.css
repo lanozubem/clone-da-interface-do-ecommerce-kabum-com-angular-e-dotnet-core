@@ -1,0 +1,123 @@
+/* Header */
+header {
+    background-color: #0060B1;
+}
+
+.header-content {
+    margin: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1350px;
+    }
+}
+
+.btn-menu,
+.buscar,
+.login-section,
+.logo-profile,
+.last-logo-group,
+.logo-kbm,
+.nav-list ul,
+.logo-section {
+    display: flex;
+}
+
+.btn-menu,
+.buscar,
+.logo-profile,
+.nav-list ul {
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo Section */
+.logo-section {
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo-section-btn-menu span {
+    color: #FFF;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.logo-kbm {
+    width: 65%;
+    height: 110px;
+}
+
+.logo-kbm img {
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Buscar */
+.buscar {
+    padding: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.buscar input {
+    border: transparent;
+    width: 100%;
+    padding: 8px 18px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+/* Login Section */
+.login-section {
+    width: 14%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login-logo-profile {
+    font-size: 33px;
+    color: #C4C4C4;
+}
+
+.login-logo-group {
+    font-size: 13px;
+}
+
+.login-logo-group span, a {
+    color: #CCDFEF;
+}
+
+/* Last Logo Group */
+.last-logo-group {
+    font-size: 20px;
+    align-items: center;
+    gap: 1.8em;
+}
+
+/* Nav List */
+.nav-list {
+    background-color: #FF6500;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-list ul {
+    margin: auto;
+}
+
+.nav-list ul li {
+    margin: 0 35px;
+    padding: 7px 0;
+    padding-right: 45px;
+}
+
+.nav-list ul li a {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FFF;
+    text-decoration: none;
+    font-size: .9em;
+}
