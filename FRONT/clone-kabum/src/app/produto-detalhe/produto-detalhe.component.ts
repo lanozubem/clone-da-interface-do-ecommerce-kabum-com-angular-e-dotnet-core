@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProdutoDetalheComponent implements OnInit {
 
   produto = {
-    "name": 'carlos',
+    "name": 'Product Name',
     "imageUrl": "https://images.kabum.com.br/produtos/fotos/128648/controle-microsoft-xbox-sem-fio-branco-qas-00007_1601326573_gg.jpg",
     "desconto": 12,
     "qtd": -1,
