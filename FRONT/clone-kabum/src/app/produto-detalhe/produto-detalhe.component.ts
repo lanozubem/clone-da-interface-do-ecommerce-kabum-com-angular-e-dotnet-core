@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from '../Models/product';
+import { ProductsService } from '../Services/products.service';
 
 @Component({
   selector: 'app-produto-detalhe',
@@ -7,18 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoDetalheComponent implements OnInit {
 
-  produto = {
-    "name": 'Product Name',
-    "imageUrl": "https://images.kabum.com.br/produtos/fotos/128648/controle-microsoft-xbox-sem-fio-branco-qas-00007_1601326573_gg.jpg",
-    "desconto": 12,
-    "qtd": -1,
-    "oldPrice": 1.220,
-    "price": 654
-  };
+  produto!: Product;
 
-  constructor() { }
+  constructor(
+    private productServices: ProductsService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.getProduct();  
   }
 
+  getProduct() {
+    this.route.params.subscribe(params => {
+      this.productServices.getProduct(params['id']).subscribe(
+        p => this.produto = p
+      )
+    })
+  }
 }

@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 /* Angular Material */
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -15,7 +17,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './slider/slider.component';
-import { FormsModule } from '@angular/forms';
 import { DepartamentsSliderComponent } from './departaments-slider/departaments-slider.component';
 import { BoxComponent } from './box/box.component';
 import { FooterComponent } from './footer/footer.component';
@@ -43,6 +44,7 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
     MatTooltipModule,
 
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

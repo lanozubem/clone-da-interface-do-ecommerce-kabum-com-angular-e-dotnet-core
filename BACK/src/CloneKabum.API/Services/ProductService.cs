@@ -19,8 +19,8 @@ namespace CloneKabum.API.Services
                     oldPrice = 15.488,
                     Price = 10.499,
                     Quantity= 36,
-                    ImageUrl = "28",
-                    Description = "Notebook Gamer G5. Além do Gaming! “Definindo o novo padrão para entretenimento geral, fornecendo um belo equilíbrio entre games, entretenimento e recursos de trabalho. Bem-vindo ao seu novo local. O notebook gaming G5 combina jogos, entretenimento, trabalho e muito mais! Seu poderoso processador Intel® Core™ i5 de décima geração permite que você lide facilmente com várias tarefas ao mesmo tempo. Além disso, possui uma tela de até 240Hz, saída para exibição de 3 telas, slot integrado para cartão SD, capacidade de armazenamento de 6TB e tecnologia Wi-Fi 6 de última geração; com uma ferramenta para cada tarefa, este notebook pode estar ao seu lado enquanto você passa por diferentes funções, apoiando você no dia a dia. Garanta seu notebook Gamer G5 no KaBuM!",
+                    ImageUrl = "https://images.kabum.com.br/produtos/fotos/158000/notebook-gamer-gigabyte-g5-intel-core-i5-10500h-16gb-512gb-15-6-fhd-240hz-nvidia-rtx-3060p-6gb-windows-10-home-preto-kc-5br2130sh_1622663251_gg.jpg",
+                    Description = "",
                     OnPromotion = true,
                     Discount = 25
                },
@@ -30,7 +30,7 @@ namespace CloneKabum.API.Services
                     oldPrice = 527,
                     Price = 395,
                     Quantity = 25,
-                    ImageUrl = "ttps://images.kabum.com.br/produtos/fotos/115801/controle-sem-fio-ps5-dualsense_1598897393_gg.jpg",
+                    ImageUrl = "https://images.kabum.com.br/produtos/fotos/115801/controle-sem-fio-ps5-dualsense_1598897393_gg.jpg",
                     Description = "",
                     OnPromotion = true,
                     Discount = 27
