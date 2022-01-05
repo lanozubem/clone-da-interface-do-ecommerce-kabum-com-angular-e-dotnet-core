@@ -94,7 +94,7 @@
 
                 <mat-list-item class="sidenav-list-item">
                     <span class="material-icons">
-                        monetization_on
+                        pix
                     </span>
                     <a href="">PIX</a>
                 </mat-list-item>
@@ -111,6 +111,9 @@
 
         <!-- HEADER -->
         <app-header (openSidenav)="isToOpen($event)"></app-header>
+
+        <!-- CONTEÚDO DINÂMICO -->
+        <router-outlet></router-outlet>
 
     </mat-sidenav-content>
 </mat-sidenav-container>

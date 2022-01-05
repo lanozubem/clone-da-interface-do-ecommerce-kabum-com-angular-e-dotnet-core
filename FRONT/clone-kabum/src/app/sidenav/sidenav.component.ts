@@ -14,6 +14,8 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Este método receberá do componente app-header um evento contendo o valor booleano true
+  // que fará com que o sidenav sejá aberto 
   isToOpen(open: boolean){
     this.opened = open;
   }

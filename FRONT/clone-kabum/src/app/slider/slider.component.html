@@ -1,0 +1,95 @@
+<div class="geral">
+
+    <button (click)="navegateTo(-110, 0)" class="btn-nav-left">
+        <span class="material-icons">
+            navigate_before
+        </span>
+    </button>
+
+    <div id="carrossel">
+
+        <!-- CARD -->
+        <div class="card card-content" *ngFor="let produto of produtos" (mouseover)="over()" (mouseout)="out()">
+
+            <!-- CARD HEADER -->
+            <div class="card-header card-header-content">
+                <div class="card-header-content-group"  *ngIf="isOvered==false">
+                    <div class="card-header-content-group-item">
+                        <strong>{{ produto.desconto }}%</strong>
+                        <span class="material-icons">
+                            arrow_drop_down
+                        </span>
+                    </div>
+                    <div class="card-header-content-group-item">
+                        <p>RESTAM <strong>{{ produto.qtd }}</strong> UNID.</p>
+                    </div>
+                </div>
+                <div class="stars card-header-content-group"  *ngIf="isOvered==false">
+                    <span class="material-icons">
+                        star
+                    </span>
+                    <span class="material-icons">
+                        star
+                    </span>
+                    <span class="material-icons">
+                        star
+                    </span>
+                    <span class="material-icons">
+                        star
+                    </span>
+                    <span class="material-icons">
+                        star
+                    </span>
+                </div>
+
+                <!-- FUTUROS AJUSTES -->
+               <!--  <div class="isOveredFavorite"
+                *ngIf="isOvered">
+                    <span class="material-icons" style="float: right;">
+                        favorite_border
+                    </span>
+                </div> -->
+            </div>
+
+            <!-- CARD BODY -->
+            <div class="card-body card-body-content">
+                <img class="w-75" src="{{ produto.imageUrl }}" title="{{ produto.name }}">
+                <div class="card-body-s-item">
+                    <p #tooltip="matTooltip" matTooltip="{{ produto.name }}" matTooltipPosition="right">
+                        <strong>{{ produto.name }}</strong>
+                    </p>
+                    <p>R${{ produto.oldPrice }}</p>
+                    <p>R${{ produto.price }}</p>
+                    <p>À vista no PIX</p>
+                </div>
+            </div>
+
+            <!-- CARD FOOTER -->
+            <div class="card-footer card-footer-content">
+                <div class="item-footer" *ngIf="isOvered==false">
+                    <span class="material-icons">
+                        schedule
+                    </span>
+                </div>
+                <div class="item-footer" *ngIf="isOvered==false">
+                    <p>OFERTA TERMINA EM:</p>
+                    <p><strong>02D 03:18:55</strong></p>
+                </div>
+                
+                <!-- Ajustes futuros -->
+                <!-- <div class="comprar" *ngIf="isOvered" ngClass="isOvered">
+                    <span class="material-icons">
+                        shopping_cart
+                    </span>
+                    <strong>COMPRAR</strong>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <button (click)="navegateTo(110, 0)" class="btn-nav-right">
+        <span class="material-icons">
+            navigate_next
+        </span>
+    </button>
+</div>
