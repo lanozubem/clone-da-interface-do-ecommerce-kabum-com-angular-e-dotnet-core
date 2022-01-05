@@ -1,0 +1,89 @@
+<div class="geral">
+    <div class="container container-content card p-4">
+
+        <div class="row">
+            <div class="col-12 product-title">
+                <h1>{{ produto.name }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6 p-2 product-image">
+                <img src="{{produto.imageUrl}}" alt="">
+            </div>
+
+            <div class="col-6" *ngIf="produto.qtd > 0">
+                <!-- BANNER -->
+                <div class="row banner d-flex flex-column justify-content-between">
+                    <div class="banner-item">
+                        <span><strong>TERMINA EM: 04D 21:24:47</strong></span>
+                    </div>
+                    <div class="d-flex banner-item justify-content-between p-3">
+                        <span>Desconto: <strong>{{ produto.desconto }}%</strong></span>|
+                        <span>Restam: <strong>{{ produto.qtd }} un.</strong></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p style="color: #606060;">
+                        Vendido e entregue por: <strong>KaBuM! | <span *ngIf="produto.qtd > 0" style="color: green;">Em
+                                estoque</span>
+                        </strong>
+                    </p>
+
+                    <div class="details-info d-flex justify-content-between align-items-center">
+                        <div class="item-details">
+                            <p>R${{ produto.oldPrice }}</p>
+                            <p>R${{ produto.price }}</p>
+                            <p>À vista no PIX com até <strong>15% OFF</strong></p>
+                        </div>
+
+                        <button type="button" class="btn-comprar">
+                            <i class="bi bi-cart-fill"></i>
+                            COMPRAR
+                        </button>
+
+                    </div>
+
+                    <p class="product-branding">
+                        Fabricante: <strong>SONY</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Caso não haja estoque do produto -->
+            <div class="col-6 no-product" *ngIf="produto.qtd < 1">
+                <div class="notify">
+                    <div class="notify-logo">
+                        <span class="material-icons">
+                            cancel
+                        </span>
+                        <p>Desculpe!</p>
+                    </div>
+                    <p>O produto que você está procurando está sem estoque.</p>
+                    <p>Cadastre o seu e-mail que avisaremos quando chegar!</p>
+                </div>
+                <form>
+                    <input type="text" class="form-control" placeholder="Digite seu nome">
+                    <input type="text" class="form-control" placeholder="Digite seu e-mail">
+                </form>
+
+                <button>ME AVISE!</button>
+                <p class="product-branding">
+                    Fabricante: <strong>SONY</strong>
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="row cep">
+            <div class="col-6">
+                <!-- CAMPO CEP -->
+            </div>
+            <div class="col-6 similares">
+                <!-- CAMPO SLIDER PRODUTOS SIMILARES -->
+            </div>
+        </div>
+    </div>
+</div>

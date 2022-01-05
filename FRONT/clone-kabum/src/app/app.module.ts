@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { DepartamentsSliderComponent } from './departaments-slider/departaments-slider.component';
 import { BoxComponent } from './box/box.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     SliderComponent,
     DepartamentsSliderComponent,
     BoxComponent,
-    FooterComponent
+    FooterComponent,
+    ProdutoDetalheComponent
   ],
   imports: [
     BrowserModule,

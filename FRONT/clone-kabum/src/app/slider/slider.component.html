@@ -9,7 +9,7 @@
     <div id="carrossel">
 
         <!-- CARD -->
-        <div class="card card-content" *ngFor="let produto of produtos" (mouseover)="over()" (mouseout)="out()">
+        <div class="card card-content" *ngFor="let produto of produtos" (mouseover)="over()" (mouseout)="out()" [routerLink]="['produto', produto.id]">
 
             <!-- CARD HEADER -->
             <div class="card-header card-header-content">

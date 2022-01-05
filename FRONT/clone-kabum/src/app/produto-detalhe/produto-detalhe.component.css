@@ -1,0 +1,161 @@
+.geral {
+    background-color: #f2f3f4;
+    padding: 20px 0;
+}
+
+.container-content {
+    background-color: #FFF;
+}
+
+.banner {
+    background-color: #DD5700;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.card {
+    border: none;
+}
+
+.product-title h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(66, 70, 77);
+    padding: 10px 0;
+}
+
+.product-image,
+.banner-item:nth-child(1),
+.no-product,
+.no-product form {
+    display: flex;
+    align-items: center;
+}
+
+
+.product-image {
+    overflow: hidden;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 70%;
+}
+
+/* BANNER */
+.banner-item, .banner-item {
+    color: #FFF;
+}
+
+.banner-item:nth-child(1) {
+    height: 50%;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.banner-item:nth-child(1) span {
+    text-decoration: line-through;
+}
+
+.banner-item:nth-child(2) {
+    background-color: #FF6500;
+    font-size: 18px;
+    height: 50%;
+    align-items: center;
+}
+
+.details-info {
+    width: 100%;
+}
+
+.btn-comprar {
+    border: none;
+    background-color: #FF6500;
+    color: #fff;
+    padding: 10px 69px;
+    border-radius: 4px;
+    outline: none;
+    cursor: not-allowed;
+}
+
+.product-branding {
+    margin-top: 150px;
+    text-align: right;
+    color: gray;
+    width: 100%;
+}
+
+.item-details {
+    line-height: 18px;
+}
+
+.item-details p:nth-child(1) {
+    text-decoration: line-through;
+    font-size: 14px;
+    color: #606060;
+}
+
+.item-details p:nth-child(2) {
+    font-size: 44px;
+    color: #FF6500;
+    font-weight: bold;
+}
+
+.item-details p:nth-child(3) {
+    color: #606060;
+    font-size: 14px;
+}
+
+.no-product {
+    flex-direction: column;
+}
+
+.no-product p {
+    color: #565C69;
+    font-size: 14px;
+}
+
+.no-product form {
+    width: 90%;
+    margin-bottom: 5px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.no-product form input {
+    border: 1px solid #7F858D;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+}
+
+.no-product button {
+    border: none;
+    background-color: #CCCCCC;
+    font-weight: 700;
+    padding: 10px 40px;
+    border-radius: 4px;
+    color: white;
+}
+
+.notify-logo {
+    text-align: center;
+    color: #E72626;
+}
+
+.notify-logo span {
+    font-size: 50px;
+}
+
+.notify-logo p {
+    font-size: 40px;
+    padding: 8px auto;
+    font-weight: 700;
+    color: #E72626;
+}
+
+.notify p:nth-child(3) {
+    line-height: 1px;
+    margin-bottom: 20px;
+}
