@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './slider/slider.component';
 import { FormsModule } from '@angular/forms';
 import { DepartamentsSliderComponent } from './departaments-slider/departaments-slider.component';
+import { BoxComponent } from './box/box.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DepartamentsSliderComponent } from './departaments-slider/departaments-
     HeaderComponent,
     HomeComponent,
     SliderComponent,
-    DepartamentsSliderComponent
+    DepartamentsSliderComponent,
+    BoxComponent
   ],
   imports: [
     BrowserModule,
