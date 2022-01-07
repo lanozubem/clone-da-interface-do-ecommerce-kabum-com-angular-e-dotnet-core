@@ -1,0 +1,42 @@
+.container-fluid {
+    background-color: #F2F3F4;
+}
+
+.page {
+    width: 732px;
+    margin: auto;
+    padding-top: 3%;
+}
+
+.content-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 384px;
+    color: #42464D;
+    font-size: 12px;
+    margin-right: 25px;
+}
+
+.page-item {
+    margin-bottom: 32px;
+}
+
+.page-item:nth-child(1) {
+    display: flex;
+    align-items: center;
+    height: 96px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.page-item:nth-child(2) {
+    font-size: 16px;
+    height: 56px;
+}
+
+.page-item:nth-child(3) a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #FF6500;
+}

@@ -53,7 +53,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0;
     color: #FF6500;
 }
 
@@ -64,6 +63,7 @@
     flex-direction: column;
     padding-top: 5px;
 }
+
 
 .card-header-content-group-item:nth-child(2) {
     font-size: .9em;

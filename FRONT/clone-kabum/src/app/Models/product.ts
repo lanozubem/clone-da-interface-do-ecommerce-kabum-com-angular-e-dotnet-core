@@ -1,11 +1,12 @@
 export interface Product {
     id: number;
     name: string;
+    description?: string;
+    manufacturer: string;
     oldPrice: number;
     price: number;
     quantity: number;
-    imageUrl: string;
-    description?: string;
     onPromotion: boolean;
     discount: number;
-}
+    imageUrl: string;
+} 

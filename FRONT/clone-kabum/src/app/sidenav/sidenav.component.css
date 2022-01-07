@@ -6,7 +6,7 @@ mat-sidenav {
 mat-sidenav {
     padding: 20px;
     background-color: #0060B1;
-    width: 25%;
+    width: 25.5%;
     position: fixed;
 }
 
@@ -20,7 +20,7 @@ mat-sidenav button {
 
 mat-divider {
     background-color: #80B0D8;
-    width: 80%;
+    width: 85%;
     margin-left: 15px;
 }
 
@@ -34,7 +34,7 @@ mat-divider {
 .sidenav {
     flex-direction: column;
     justify-content: space-evenly;
-    height: 550px;
+    height: 100%;
 }
 
 /* SIDENAV USER */
@@ -45,20 +45,21 @@ mat-divider {
     font-size: 20px;
     color: #FFF;
     padding: 10px 0;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .sidenav-profile button {
     align-items: center;
-    margin-left: 10px;
+    position: fixed;
+    right: 72%;
 }
 
 .profile-icon span {
-    font-size: 30px;
-    margin-right: 10px;
+    font-size: 35px;
     color: #c4c4c49f;
-    border: 2px solid #acacac;
+    border: 1px solid #acacac;
     border-radius: 50%;
+    margin-right: 12px;
 }
 
 /* MANIPULANDO A APARENCIA DO SCROLL-Y */
@@ -84,6 +85,9 @@ mat-divider {
 .sidenav-list-item {
     margin: 10px 0;
 }
+.sidenav-list-item:hover {
+    background-color: #0060B1;
+}
 
 .sidenav-list-item a {
     color: #FFF;
@@ -93,8 +97,8 @@ mat-divider {
 }
 
 .sidenav-list-item span {
-    color: #FFFF;
-    font-size: 20px;
+    color: #FFF;
+    font-size: 18px;
     text-decoration: none;
     font-weight: 400;
     margin-right: 15px;

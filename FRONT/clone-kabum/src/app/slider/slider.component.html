@@ -9,22 +9,26 @@
     <div id="carrossel">
 
         <!-- CARD -->
-        <div class="card card-content" *ngFor="let produto of produtos" (mouseover)="over()" (mouseout)="out()" [routerLink]="['produto', produto.id]">
+        <div class="card card-content" *ngFor="let produto of produtos" (mouseover)="over()" (mouseout)="out()"
+            [routerLink]="['produto', produto.id]">
 
             <!-- CARD HEADER -->
             <div class="card-header card-header-content">
-                <div class="card-header-content-group"  *ngIf="isOvered==false">
+                <div class="card-header-content-group" *ngIf="isOvered==false">
                     <div class="card-header-content-group-item">
-                        <strong>{{ produto.desconto }}%</strong>
+                        <strong>{{ produto.discount }}%</strong>
                         <span class="material-icons">
                             arrow_drop_down
                         </span>
                     </div>
                     <div class="card-header-content-group-item">
-                        <p>RESTAM <strong>{{ produto.qtd }}</strong> UNID.</p>
+                        <p>RESTAM <br>
+                            <strong>{{ produto.quantity }}</strong><br>
+                            UNID.
+                        </p>
                     </div>
                 </div>
-                <div class="stars card-header-content-group"  *ngIf="isOvered==false">
+                <div class="stars card-header-content-group" *ngIf="isOvered==false">
                     <span class="material-icons">
                         star
                     </span>
@@ -43,7 +47,7 @@
                 </div>
 
                 <!-- FUTUROS AJUSTES -->
-               <!--  <div class="isOveredFavorite"
+                <!--  <div class="isOveredFavorite"
                 *ngIf="isOvered">
                     <span class="material-icons" style="float: right;">
                         favorite_border
@@ -75,7 +79,7 @@
                     <p>OFERTA TERMINA EM:</p>
                     <p><strong>02D 03:18:55</strong></p>
                 </div>
-                
+
                 <!-- Ajustes futuros -->
                 <!-- <div class="comprar" *ngIf="isOvered" ngClass="isOvered">
                     <span class="material-icons">

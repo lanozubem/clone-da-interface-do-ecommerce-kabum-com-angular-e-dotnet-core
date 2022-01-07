@@ -109,9 +109,8 @@ header {
 }
 
 .nav-list ul li {
-    margin: 0 35px;
+    margin: 0 55px;
     padding: 7px 0;
-    padding-right: 45px;
 }
 
 .nav-list ul li a {
@@ -119,5 +118,6 @@ header {
     font-weight: 700;
     color: #FFF;
     text-decoration: none;
-    font-size: .9em;
+    font-size:  14px;
+    text-align: center;
 }

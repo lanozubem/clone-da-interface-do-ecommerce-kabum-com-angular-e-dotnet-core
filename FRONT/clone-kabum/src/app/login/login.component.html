@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row title">
+        <span class="material-icons">person</span>
+        <h1>IDENTIFICAÇÃO</h1>
+    </div>
+
+    <div class="row form-div">
+        <!-- LOGIN -->
+        <div class="col-6 login-item">
+            <h3>JÁ TENHO CADASTRO</h3>
+            <div class="form-login">
+                <form #formLogin="ngForm" (ngSubmit)="submitLogin(formLogin)">
+                    <input [(ngModel)]="user.email" name="email" type="email" placeholder="E-mail, CPF ou CNPJ *"
+                        required>
+
+                    <input [(ngModel)]="user.password" name="password" type="password" placeholder="Senha" required>
+
+                    <p class="invalidData" *ngIf="dataIsvalid!=true">
+                        <span class="material-icons">warning</span>
+                        Dados inválidos, tente novamente!
+                    </p>
+
+                    <button>
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        ENTRAR
+                    </button>
+                </form>
+                <div class="row links">
+                    <a href="">ESQUECI MEU LOGIN</a>
+                    <a href="">ESQUECI A MINHA SENHA</a>
+                </div>
+            </div>
+            <hr>
+            <h4>QUERO ACESSAR COM MINHAS REDES SOCIAIS</h4>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="bi bi-facebook"></i>
+                    Entrar com o <strong>Facebook</strong>
+                </button>
+                <button type="button" class="btn btn-outline-danger">
+                    <i class="bi bi-google"></i>
+                    Entrar com o <strong>Google</strong>
+                </button>
+            </div>
+        </div>
+        <!-- CADASTRO -->
+        <div class="col-6 login-item">
+            <h3>QUERO ME CADASTRAR</h3>
+            <div class="form-login">
+                <form #formCadastro="ngForm" (ngSubmit)="cadastrar(formCadastro)">
+                    <input #mail name="email" type="email" placeholder="E-mail*" required>
+                    <!-- <div class="invalidData">
+                        <span class="material-icons">warning</span>
+                        Este campo é obrigatório.
+                    </div> -->
+                    <input name="password" type="password" placeholder="Crie sua senha*" required>
+                    <input name="re-password" type="password" placeholder="Confirme sua senha*" required>
+                    <input type="number" placeholder="CPF ou CNPF*" disabled>
+                    <input name="zip" type="number" placeholder="CEP*" required>
+                </form>
+            </div>
+            <button class="btn btn-cadastrar">
+                <i class="bi bi-file-text-fill"></i>
+                CADASTRAR
+            </button>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br>
+</div>

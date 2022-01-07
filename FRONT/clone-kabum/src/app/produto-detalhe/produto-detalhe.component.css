@@ -1,18 +1,27 @@
 .geral {
     background-color: #f2f3f4;
-    padding: 20px 0;
+    padding: 20px 0px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1220px;
+    }
 }
 
 .container-content {
     background-color: #FFF;
+    padding: 10px 45px !important;
 }
 
 .banner {
-    background-color: #DD5700;
     border-radius: 4px;
     overflow: hidden;
     height: 150px;
     margin-bottom: 15px;
+    background-image: url('../../assets/ninja.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .card {
@@ -45,25 +54,30 @@
 }
 
 /* BANNER */
-.banner-item, .banner-item {
+.banner-item span{
     color: #FFF;
+    font-size: 20px;
 }
 
 .banner-item:nth-child(1) {
     height: 50%;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: 24px;
+    padding-right: 20px;
 }
 
 .banner-item:nth-child(1) span {
     text-decoration: line-through;
+    font-size: 24px;
 }
 
 .banner-item:nth-child(2) {
-    background-color: #FF6500;
-    font-size: 18px;
     height: 50%;
     align-items: center;
+}
+
+.banner-item strong{
+    font-size: 24px;
 }
 
 .details-info {
@@ -71,13 +85,19 @@
 }
 
 .btn-comprar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42%;
     border: none;
     background-color: #FF6500;
     color: #fff;
-    padding: 10px 69px;
+    padding: 10px;
     border-radius: 4px;
     outline: none;
     cursor: not-allowed;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .product-branding {
@@ -85,6 +105,7 @@
     text-align: right;
     color: gray;
     width: 100%;
+    font-size: 14px;
 }
 
 .item-details {

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBackEnd: "http://localhost:5000/api/v1/products",
+  apiToken: "https://localhost:5001/api/v1/auth",
 };
 
 /*

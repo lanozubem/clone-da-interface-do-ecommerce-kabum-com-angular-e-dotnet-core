@@ -21,6 +21,9 @@ import { DepartamentsSliderComponent } from './departaments-slider/departaments-
 import { BoxComponent } from './box/box.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MyAccountComponent } from './my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
     DepartamentsSliderComponent,
     BoxComponent,
     FooterComponent,
-    ProdutoDetalheComponent
+    ProdutoDetalheComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    MyAccountComponent
   ],
   imports: [
     BrowserModule,
