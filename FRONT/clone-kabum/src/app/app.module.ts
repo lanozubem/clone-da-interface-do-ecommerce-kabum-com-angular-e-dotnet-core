@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 /* Angular Material */
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -24,7 +24,9 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { InterceptorService } from './Services/interceptor.service';
 
+const authService = [InterceptorService];
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    
+
     MatSidenavModule,
     MatListModule,
     MatTooltipModule,
@@ -52,7 +54,10 @@ import { MyAccountComponent } from './my-account/my-account.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    authService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

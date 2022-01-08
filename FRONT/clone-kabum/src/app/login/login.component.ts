@@ -32,15 +32,9 @@ export class LoginComponent implements OnInit {
       .subscribe(
         token => {
           if (token) {
-            debugger;
-            localStorage.setItem('user_logged', JSON.stringify(token));
             this.userAuthenticated = true;
             this.dataIsvalid = true;
-            console.log(form.value)
-            debugger;
             this.router.navigate(['minha-conta'])
-          } else {
-            alert("Usuário inválido")
           }
         },
         error => {
