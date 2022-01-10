@@ -57,7 +57,7 @@ namespace CloneKabum.API.Repositories
                 Manufacturer = "XPG",
                 OldPrice = 399.88,
                 Price = 299.9,
-                Quantity = 13,
+                Quantity = 0,
                 OnPromotion = true,
                 Discount = 11,
                 imageUrl = "https://images.kabum.com.br/produtos/fotos/194492/memoria-xpg-spectrix-d45g-rgb-8gb-3600mhz-ddr4-cl18-preta-ax4u36008g18i-cbkd45g_1632507273_gg.jpg"

@@ -12,22 +12,5 @@ namespace CloneKabum.API.Controllers
         {
             return Ok("Olá " + User.Identity.Name + " rota aberta a todos os colaboradores.");
         }
-
-        [HttpGet]
-        [Route("/api/v1/user/manager")]
-        [Authorize(Roles = "Director,Manager")]
-        public IActionResult GetManager()
-        {
-            return Ok("Está logado como gerente: " + User.Identity.Name);
-        }
-
-
-        [HttpGet]
-        [Route("/api/v1/user/director")]
-        [Authorize(Roles = "Director")]
-        public IActionResult GetDirector()
-        {
-            return Ok("Está logado como diretor: " + User.Identity.Name);
-        }
     }
 }

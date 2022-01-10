@@ -6,42 +6,16 @@ namespace CloneKabum.API.Repositories
 {
     public class UserRepository
     {
-        private static int _nextInt = 4;
-
-        /*
-        * 1 - Diretor
-        * 2 - Gerente
-        * 3 - Colaborador
-        */
+        private static int _nextInt = 2;
 
         public static IList<User> Users = new List<User>
         {
-
             new User
             {
                 Id = 1,
-                Type = 1,
-                Email = "lucas@eu.com",
-                Name = "Lucas",
-                Password = "123"
-            },
-
-            new User
-            {
-                Id = 2,
-                Type = 2,
-                Email = "mariana@eu.com",
-                Name = "Mariana",
-                Password = "123"
-            },
-
-            new User
-            {
-                Id = 3,
-                Type = 2,
-                Email = "gabriel@eu.com",
-                Name = "Gabriel",
-                Password = "123"
+                Email = "zubemluano@gmail.com",
+                Name = "Luano",
+                Password = "loop"
             },
         };
 

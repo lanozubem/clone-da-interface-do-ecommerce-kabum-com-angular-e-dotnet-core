@@ -46,8 +46,6 @@ export class LoginComponent implements OnInit {
   submitRegister(form: NgForm) {
 
     this.userRegister = form.value;
-    this.userRegister.type = 1;
-
     console.log(this.userRegister);
 
     if (form.value.password != this.re_password) {

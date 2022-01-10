@@ -28,7 +28,7 @@
 }
 
 .card-content:hover {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.459) 0px 8px 24px;
     transition: .6s;
 }
 
