@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAccountComponent implements OnInit {
 
+  userLogged = {
+    name: "Luano Zubém",
+    email: "zubemluano@gmail.com",
+    imageUrl: ""
+  };
+
   constructor() { }
 
   ngOnInit(): void {

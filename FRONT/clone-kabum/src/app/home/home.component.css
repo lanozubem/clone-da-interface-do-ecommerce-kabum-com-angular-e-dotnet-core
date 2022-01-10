@@ -35,7 +35,7 @@
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1350px;
+        max-width: 1360px;
     }
 }
 
@@ -43,9 +43,8 @@
     background-color: #FF6500;
     color: aliceblue;
     border-radius: 0;
-    padding: 20px 0;
     border: none;
-    padding: 18px 73px;
+    padding: 17px 87px;
     font-weight: bold;
     font-size: 25px;
     display: flex;

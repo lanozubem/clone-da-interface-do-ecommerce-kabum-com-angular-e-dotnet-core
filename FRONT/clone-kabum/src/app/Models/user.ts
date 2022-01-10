@@ -2,5 +2,7 @@ export interface User {
     id: number;
     email: string;
     password: string;
-    role?: string;
+    RePassword: string;
+    zip: string;
+    type: number; 
 }

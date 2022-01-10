@@ -36,12 +36,13 @@ namespace CloneKabum.API
             services.AddCors();
 
             #region JWT Config
-                services.AddAuthentication(x =>
+            services.AddAuthentication(x =>
                 {
                     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 })
-                .AddJwtBearer(x =>
+            .AddJwtBearer(x =>
                 {
                     x.RequireHttpsMetadata = false;
                     x.SaveToken = true;
@@ -71,6 +72,8 @@ namespace CloneKabum.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CloneKabum.API v1"));
             }
 
+
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -81,6 +84,7 @@ namespace CloneKabum.API
             app.UseCors(x => x.AllowAnyHeader()
                               .AllowAnyMethod()
                               .AllowAnyOrigin());
+
 
             app.UseEndpoints(endpoints =>
             {

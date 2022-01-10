@@ -11,10 +11,7 @@ namespace CloneKabum.API.Controllers
     {
 
         [HttpGet]
-        public ActionResult<List<Product>> GetAll()
-        {
-            return ProductRepository.GetProducts();
-        }
+        public ActionResult<List<Product>> GetAll() => ProductRepository.GetProducts();
 
         [HttpGet("{id}")]
         public ActionResult<Product> Get(int id)
@@ -22,9 +19,16 @@ namespace CloneKabum.API.Controllers
             var product = ProductRepository.Get(id);
 
             if (product == null)
-                return NotFound(new { Message = "Produto não encontrado!"});
+                return NotFound(new { Message = "Produto não encontrado!" });
 
             return product;
+        }
+
+        [HttpPost]
+        public ActionResult<Product> Create(Product product)
+        {
+            ProductRepository.Create(product);
+            return CreatedAtAction(nameof(Create), new { id = product.Id }, product);
         }
 
     }

@@ -24,6 +24,7 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+
 import { InterceptorService } from './Services/interceptor.service';
 
 const authService = [InterceptorService];

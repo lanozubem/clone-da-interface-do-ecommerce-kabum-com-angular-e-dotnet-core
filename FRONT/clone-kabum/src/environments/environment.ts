@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   apiBackEnd: "http://localhost:5000/api/v1/products",
-  apiToken: "https://localhost:5001/api/v1/auth",
+  apiTokenLogin: "https://localhost:5001/api/v1/login",
+  apiRegisterUser: "https://localhost:5001/api/v1/register",
 };
 
 /*

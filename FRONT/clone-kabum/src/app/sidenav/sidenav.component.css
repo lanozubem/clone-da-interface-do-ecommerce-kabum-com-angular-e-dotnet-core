@@ -6,7 +6,7 @@ mat-sidenav {
 mat-sidenav {
     padding: 20px;
     background-color: #0060B1;
-    width: 25.5%;
+    width:350px;
     position: fixed;
 }
 

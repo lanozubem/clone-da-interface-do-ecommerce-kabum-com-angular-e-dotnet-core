@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../Models/user';
+import { AuthService } from '../Services/auth.service';
 import { LoginService } from '../Services/login.service';
 
 @Component({
@@ -11,39 +12,59 @@ import { LoginService } from '../Services/login.service';
 })
 export class LoginComponent implements OnInit {
 
+  //login
   user = {} as User;
-  userAuthenticated = false;
+
+  //register
+  userRegister = {} as User;
+  re_password: any;
+
   dataIsvalid = true;
 
   constructor(
     private loginService: LoginService,
+    private authService: AuthService,
     private router: Router,
   ) { }
 
-  ngOnInit(): void {
-    if (this.userAuthenticated) {
-      this.router.navigate(['/'])
-    }
-  }
+  ngOnInit(): void { }
 
   submitLogin(form: NgForm) {
-
     this.loginService.login(form.value)
       .subscribe(
         token => {
-          if (token) {
-            this.userAuthenticated = true;
-            this.dataIsvalid = true;
-            this.router.navigate(['minha-conta'])
-          }
+          this.dataIsvalid = true;
+          this.authService.setToken(token);
+          this.router.navigate(['minha-conta']);
         },
         error => {
           this.dataIsvalid = false;
+          console.log(error);
         })
   }
 
-  cadastrar(form: NgForm) {
-    console.log(form);
+  submitRegister(form: NgForm) {
+
+    this.userRegister = form.value;
+    this.userRegister.type = 1;
+
+    console.log(this.userRegister);
+
+    if (form.value.password != this.re_password) {
+      alert("Os campos não coincidem.")
+    } else {
+      this.loginService.registerUser(this.userRegister)
+        .subscribe(
+          data => {
+            console.log(data);
+            alert("Usuário registrado com sucesso!");
+            this.router.navigate(['minha-conta']);
+          },
+          error => {
+            console.log(error);
+          }
+        )
+    }
   }
 
 }

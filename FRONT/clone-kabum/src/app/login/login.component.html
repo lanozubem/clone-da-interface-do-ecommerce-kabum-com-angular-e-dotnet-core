@@ -47,22 +47,23 @@
         <div class="col-6 login-item">
             <h3>QUERO ME CADASTRAR</h3>
             <div class="form-login">
-                <form #formCadastro="ngForm" (ngSubmit)="cadastrar(formCadastro)">
-                    <input #mail name="email" type="email" placeholder="E-mail*" required>
+                <form #formRegister="ngForm" (ngSubmit)="submitRegister(formRegister)">
+                    <input [(ngModel)]="userRegister.email" #mail name="email" type="email" placeholder="E-mail*" required>
                     <!-- <div class="invalidData">
                         <span class="material-icons">warning</span>
                         Este campo é obrigatório.
                     </div> -->
-                    <input name="password" type="password" placeholder="Crie sua senha*" required>
-                    <input name="re-password" type="password" placeholder="Confirme sua senha*" required>
+                    <input [(ngModel)]="userRegister.password" name="password" type="password" placeholder="Crie sua senha*" required>
+                    <input [(ngModel)]="re_password" name="re-password" type="password" placeholder="Confirme sua senha*" required>
                     <input type="number" placeholder="CPF ou CNPF*" disabled>
-                    <input name="zip" type="number" placeholder="CEP*" required>
+                    <input [(ngModel)]="userRegister.zip" name="zip" type="text" placeholder="CEP*" required>
+
+                    <button class="btn btn-cadastrar">
+                        <i class="bi bi-file-text-fill"></i>
+                        CADASTRAR
+                    </button>
                 </form>
             </div>
-            <button class="btn btn-cadastrar">
-                <i class="bi bi-file-text-fill"></i>
-                CADASTRAR
-            </button>
         </div>
     </div>
     <br><br><br><br><br><br><br>

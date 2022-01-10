@@ -6,6 +6,7 @@ namespace CloneKabum.API.Repositories
 {
     public static class ProductRepository
     {
+        private static int _nextId = 10;
         public static List<Product> Products = new List<Product>
         {
 
@@ -132,5 +133,11 @@ namespace CloneKabum.API.Repositories
         public static List<Product> GetProducts() => Products;
 
         public static Product Get(int id) => Products.FirstOrDefault(p => p.Id == id);
+
+        public static void Create(Product product)
+        {
+            product.Id = _nextId++;
+            Products.Add(product);
+        }
     }
 }

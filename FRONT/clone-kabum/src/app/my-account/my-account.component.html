@@ -1,1 +1,95 @@
-<p>my-account works!</p>
+<div class="geral" *ngIf="userLogged">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="card profile">
+                <div class="profile-image">
+                    <img src="https://gkt-prod-upload.s3.amazonaws.com/galeria/perfil/KbLDj1TS1LCpk1598324808KbX9O4v.iuRb.-250x250.jpg"
+                        alt="">
+                </div>
+                <div class="profile-info">
+                    <strong>Bem-vindo, {{ userLogged.name }}</strong><br>
+                    <span>{{ userLogged.email }}</span>
+                </div>
+                <i class="bi bi-gear-fill"></i>
+            </div>
+
+            <div class="card profile">
+                <div class="card-info">
+                    <p>Crédito disponível</p>
+                    <h2>R$ 0,00</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row order">
+            <div class="row order-title">
+                <span class="material-icons">shopping_cart</span>
+                <strong>SEU ÚLTIMO PEDIDO</strong>
+            </div>
+
+            <div class="card order-content">
+                <div class="row order-details">
+                    <div class="detail">
+                        <strong>NÚMERO DO PEDIDO</strong>
+                        <span>#27185233</span>
+                    </div>
+                    <div class="detail">
+                        <strong>STATUS</strong>
+                        <span>Concluído</span>
+                    </div>
+                    <div class="detail">
+                        <strong>DATA</strong>
+                        <span>26/11/2021</span>
+                    </div>
+                    <div class="detail">
+                        <strong>PAGAMENTO</strong>
+                        <span>Cartão de Crédito</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="row order-address">
+                        <div class="col-9 address-item">
+                            <strong>ENDEREÇO</strong>
+                            <span>Segunda Travessa Rua Rita Alves Espíndola</span>
+                            <span>Número 18, VILA POMBOS</span>
+                            <span>CEP 55380000 - Cachoeirinha, PE</span>
+                        </div>
+                        <div class="col-3 address-item">
+                            <strong>SEQUOIA</strong>
+                            <a href="">24271852231254581000010001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row allOrders">
+                    <a href="">VER TODOS OS PEDIDOS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-content">
+                <div class="row">
+                    <h2>ATALHOS</h2>
+                </div>
+                <div class="div-group">
+                    <div class="item">
+                        <span class="material-icons">shopping_cart</span>
+                        <span>MEUS PEDIDOS</span>
+                    </div>
+                    <div class="item">
+                        <i class="bi bi-headset"></i>
+                        <span>ATENDIMENTO AO CLIENTE</span>
+                    </div>
+                    <div class="item" routerLink="favoritos">
+                        <i class="bi bi-suit-heart-fill"></i>
+                        <span>FAVORITOS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
