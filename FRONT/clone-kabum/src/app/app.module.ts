@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MyAccountComponent } from './my-account/my-account.component';
 
 import { InterceptorService } from './Services/interceptor.service';
+import { MyAccountSidenavComponent } from './my-account-sidenav/my-account-sidenav.component';
 
 const authService = [InterceptorService];
 @NgModule({
@@ -41,7 +42,8 @@ const authService = [InterceptorService];
     ProdutoDetalheComponent,
     LoginComponent,
     PageNotFoundComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    MyAccountSidenavComponent
   ],
   imports: [
     BrowserModule,
