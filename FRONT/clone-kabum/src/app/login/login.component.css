@@ -6,12 +6,13 @@
     font-weight: bold;
     font-size: 24px;
     color: #42464D;
+    margin-top: 8px;
 }
 
 .title span {
     color: #FF5101;
-    font-size: 30px;
-    margin-top: -2px;
+    font-size: 35px;
+    margin-top: 1px;
 }
 
 
@@ -84,7 +85,6 @@ hr {
     outline: none;
 }
 
-
 .btn-group {
     width: 90%;
     display: flex;
@@ -125,19 +125,26 @@ hr {
 
 .form-div {
     margin: auto;
+    margin-bottom: 100px;
 }
 
 .btn-cadastrar {
     border: none;
-    color: #ff5101;
+    background-color: white !important;
+    color: #ff5101 !important;
     font-weight: bold;
-    width: 87.5%;
-    border: 1px solid #FF5101;
+    border: 1px solid #FF5101 !important;
     padding: 10px 0;
     border-radius: 4px;
     margin-top: 22px;
-    margin-bottom: 20px;
     font-size: 18px;
+    background-color: transparent;
+    margin-bottom: 5px !important;
+}
+
+/* Validações dos formulários*/
+.ng-invalid.ng-touched:not(form) {
+    border: 2px solid #E72626 !important;
 }
 
 .invalidData {
@@ -145,6 +152,8 @@ hr {
     font-size: 14px;
     display: flex;
     align-items: center;
-    margin-right: 5px;
     margin-bottom: 10px;
+}
+.invalidData span {
+    margin-right: 5px;
 }

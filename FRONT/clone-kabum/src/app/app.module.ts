@@ -25,10 +25,8 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 
-import { InterceptorService } from './Services/interceptor.service';
 import { MyAccountSidenavComponent } from './my-account-sidenav/my-account-sidenav.component';
 
-const authService = [InterceptorService];
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,10 +55,7 @@ const authService = [InterceptorService];
     FormsModule,
     HttpClientModule
   ],
-  providers: [
-    authService,
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

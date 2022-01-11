@@ -1,7 +1,16 @@
 .geral {
     display: flex;
     flex-direction: column;
-    background-color: #1B1B1B;
+
+    /* SEMANA PRIME NINJA */
+    /* background-color: #1B1B1B; */
+
+    /* KORUJÃO */
+    background-color: #001645;
+
+    /* VERÃO */
+    /* background-color: #0196F4; */
+
     padding: 0;
 }
 

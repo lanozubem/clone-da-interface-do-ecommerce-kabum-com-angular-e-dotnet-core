@@ -1,8 +1,9 @@
-export interface User {
-    id: number;
-    email: string;
-    password: string;
-    RePassword: string;
-    zip: string;
-    type: number; 
+export class User {
+    id!: number;
+    name!: string;
+    email!: string;
+    password!: string;
+    imageUrl!: string;
+    zip!: string;
+    type!: number; 
 }

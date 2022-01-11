@@ -5,22 +5,36 @@
     </div>
 
     <div class="row form-div">
+
         <!-- LOGIN -->
         <div class="col-6 login-item">
             <h3>JÁ TENHO CADASTRO</h3>
             <div class="form-login">
                 <form #formLogin="ngForm" (ngSubmit)="submitLogin(formLogin)">
-                    <input [(ngModel)]="user.email" name="email" type="email" placeholder="E-mail, CPF ou CNPJ *"
-                        required>
 
-                    <input [(ngModel)]="user.password" name="password" type="password" placeholder="Senha" required>
+                    <input #emailLogin="ngModel" [ngModel]="user.email" name="email" type="email"
+                        placeholder="E-mail, CPF ou CNPJ *" required email>
 
-                    <p class="invalidData" *ngIf="dataIsvalid!=true">
+                    <input #passwordLogin="ngModel" [ngModel]="user.password" name="password" type="password"
+                        placeholder="Senha" required>
+
+                    <!-- Caso haja inconsistência nas credencias do usuário -->
+                    <div class="invalidData" *ngIf="dataIsvalid!=true">
                         <span class="material-icons">warning</span>
                         Dados inválidos, tente novamente!
-                    </p>
+                    </div>
 
-                    <button>
+                    <!-- Caso algum dos campos não seja devidamente preechido -->
+                    <div class="invalidData"
+                        *ngIf="(
+                            emailLogin.invalid && emailLogin.touched) || (passwordLogin.invalid && passwordLogin.touched)">
+                        <span class="material-icons-round">
+                            warning
+                        </span>
+                        Preencha todos os campos!
+                    </div>
+
+                    <button type="submit" [disabled]="!formLogin.valid" class="btn">
                         <i class="bi bi-box-arrow-in-right"></i>
                         ENTRAR
                     </button>
@@ -34,31 +48,67 @@
             <h4>QUERO ACESSAR COM MINHAS REDES SOCIAIS</h4>
             <div class="btn-group">
                 <button type="button" class="btn btn-outline-primary">
-                    <i class="bi bi-facebook"></i>
-                    Entrar com o <strong>Facebook</strong>
+                    <i class="bi bi-facebook">Entrar com o <strong>Facebook</strong></i>
                 </button>
                 <button type="button" class="btn btn-outline-danger">
-                    <i class="bi bi-google"></i>
-                    Entrar com o <strong>Google</strong>
+                    <i class="bi bi-google">Entrar com o <strong>Google</strong></i>
                 </button>
             </div>
         </div>
+
         <!-- CADASTRO -->
         <div class="col-6 login-item">
             <h3>QUERO ME CADASTRAR</h3>
             <div class="form-login">
                 <form #formRegister="ngForm" (ngSubmit)="submitRegister(formRegister)">
-                    <input [(ngModel)]="userRegister.email" #mail name="email" type="email" placeholder="E-mail*" required>
-                    <!-- <div class="invalidData">
+
+                    <input #emailRegister="ngModel" [ngModel]="userRegister.email" name="email" type="email"
+                        placeholder="E-mail*" required email>
+                    <div class="invalidData" *ngIf="emailRegister.invalid && emailRegister.touched">
                         <span class="material-icons">warning</span>
                         Este campo é obrigatório.
-                    </div> -->
-                    <input [(ngModel)]="userRegister.password" name="password" type="password" placeholder="Crie sua senha*" required>
-                    <input [(ngModel)]="re_password" name="re-password" type="password" placeholder="Confirme sua senha*" required>
-                    <input type="number" placeholder="CPF ou CNPF*" disabled>
-                    <input [(ngModel)]="userRegister.zip" name="zip" type="text" placeholder="CEP*" required>
+                    </div>
 
-                    <button class="btn btn-cadastrar">
+                    <!-- Caso possua cadastro na base de dados -->
+                    <div class="invalidData" *ngIf="emailIsRegistered!=false">
+                        <span class="material-icons">warning</span>
+                        E-mail Existente
+                    </div>
+
+                    <input #passwordRegister="ngModel" [(ngModel)]="userRegister.password" name="password"
+                        type="password" placeholder="Crie sua senha*" required>
+                    <div class="invalidData" *ngIf="(passwordRegister.invalid && passwordRegister.touched)">
+                        <span class="material-icons-round">
+                            warning
+                        </span>
+                        Este campo é obrigatório.
+                    </div>
+
+                    <input #rePasswordRegister="ngModel" [(ngModel)]="re_password" name="re-password" type="password"
+                        placeholder="Confirme sua senha*" required>
+                    <div class="invalidData" *ngIf="
+                    (rePasswordRegister.invalid && rePasswordRegister.touched)">
+                        <span class="material-icons-round">
+                            warning
+                        </span>
+                        Este campo é obrigatório.
+                    </div>
+                    <!-- Caso os passwords forem diferenets -->
+                    <div class="invalidData" *ngIf="thePasswordsAreCorrect!=true">
+                        <span class="material-icons">warning</span>
+                        Os campos não coincidem.
+                    </div>
+
+                    <input type="number" placeholder="CPF ou CNPF*" disabled>
+
+                    <input #zipCode="ngModel" [ngModel]="userRegister.zip" name="zip" type="text" placeholder="CEP*"
+                        required>
+                    <div class="invalidData" *ngIf="zipCode.invalid && zipCode.touched">
+                        <span class="material-icons">warning</span>
+                        Este campo é obrigatório.
+                    </div>
+
+                    <button type="submit" class="btn btn-cadastrar" [disabled]="!formRegister.valid">
                         <i class="bi bi-file-text-fill"></i>
                         CADASTRAR
                     </button>
@@ -66,5 +116,4 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br>
 </div>

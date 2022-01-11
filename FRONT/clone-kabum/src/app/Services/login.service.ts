@@ -12,7 +12,8 @@ export class LoginService {
   private readonly urlToken = environment["apiTokenLogin"];
   private readonly urlRegisterUser = environment["apiRegisterUser"];
 
-  tokenUsuario: any;
+  userIsAuth = false;
+  private userLogged: any;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -33,6 +34,18 @@ export class LoginService {
 
   registerUser(user: User): Observable<User> {
     return this.httpClient.post<User>(this.urlRegisterUser, JSON.stringify(user), this.httpOptions)
+  }
+
+  userIsAuthenticated(): boolean {
+    return this.userIsAuth;
+  }
+
+  setUserLogged(user: User) {
+    this.userLogged = user;
+  }
+
+  getUserLogged(): User {
+    return this.userLogged;
   }
 
 }

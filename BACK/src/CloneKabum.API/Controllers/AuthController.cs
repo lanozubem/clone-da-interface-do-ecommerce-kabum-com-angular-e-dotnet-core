@@ -24,11 +24,7 @@ namespace CloneKabum.API.Controllers
                 if (userExists.Password != user.Password)
                     return BadRequest(new { Message = "Email e/ou senha está(ão) inválido(s)." });
 
-                return Ok(new
-                {
-                    Usuario = userExists
-                });
-
+                return Ok(userExists);
             }
             catch (Exception)
             {
@@ -37,7 +33,6 @@ namespace CloneKabum.API.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [Route("/api/v1/register")]
         public IActionResult RegisterUser([FromBody] User user)
         {
