@@ -14,11 +14,11 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private productsService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    this.getProducts()
+    this.getProducts();
   }
 
   getProducts(){

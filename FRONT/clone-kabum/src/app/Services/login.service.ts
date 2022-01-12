@@ -1,8 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../Models/user';
+import { SessionStorageService } from './session-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,26 +14,31 @@ export class LoginService {
   private readonly urlToken = environment["apiTokenLogin"];
   private readonly urlRegisterUser = environment["apiRegisterUser"];
 
-  userIsAuth = false;
+  private userIsAuth = false;
   private userLogged: any;
 
   httpOptions = {
     headers: new HttpHeaders({
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+      'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
       'Content-Type': 'application/json; charset=utf-8',
       'Access-Control-Allow-Origin': '*',
-      "accept": "*",
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-      'Access-Control-Allow-Headers': 'X-Requested-With,content-type'
+      "accept": "*"
     })
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private sessionStorage: SessionStorageService,
+    private router: Router
+  ) { }
 
-
-  login(data: any) {
-    return this.httpClient.post(this.urlToken, data);
+  /* LOGIN */
+  login(user: User) {
+    return this.httpClient.post(this.urlToken, user);
   }
 
+  /* REGISTER */
   registerUser(user: User): Observable<User> {
     return this.httpClient.post<User>(this.urlRegisterUser, JSON.stringify(user), this.httpOptions)
   }
@@ -40,12 +47,32 @@ export class LoginService {
     return this.userIsAuth;
   }
 
-  setUserLogged(user: User) {
-    this.userLogged = user;
+  setUserAuthenticated(authenticate: boolean) {
+    this.userIsAuth = authenticate;
+    if (authenticate) {
+      this.initializerValues();
+    }
   }
 
   getUserLogged(): User {
     return this.userLogged;
   }
 
+  setUserLogged(user: User) {
+    this.userLogged = user;
+  }
+
+  private initializerValues() {
+    if (this.userIsAuth) {
+      this.sessionStorage.setObject("userLogged", this.getUserLogged());
+      this.sessionStorage.set("isAuth", "true");
+    } else {
+      this.sessionStorage.clear();
+    }
+  }
+
+  loggout() {
+    this.sessionStorage.clear();
+    this.router.navigate(['/']);
+  }
 }

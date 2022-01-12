@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { User } from '../Models/user';
 import { LoginService } from '../Services/login.service';
+import { SessionStorageService } from '../Services/session-storage.service';
 
 @Component({
   selector: 'app-my-account',
@@ -13,20 +13,21 @@ export class MyAccountComponent implements OnInit {
   userLogged!: User;
   order = false;
 
-  estaAutenticado = false;
+  isAuthenticated = false;
+
   constructor(
-    private LoginService: LoginService,
-    private router: Router
+    private loginService: LoginService,
+    private sessionStorage: SessionStorageService
   ) { }
 
   ngOnInit(): void {
-    this.estaAutenticado = this.LoginService.userIsAuth;
-
-    if (this.estaAutenticado != true) {
-      this.router.navigate(['login'])
+    if (this.sessionStorage.get("isAuth") == "true") {
+      let objJSON = JSON.parse(this.sessionStorage.get("userLogged"));
+      this.userLogged = objJSON;
+      this.isAuthenticated = true;
+    } else {
+      this.sessionStorage.clear();
     }
-    
-    this.userLogged = this.LoginService.getUserLogged();
   }
 
 }

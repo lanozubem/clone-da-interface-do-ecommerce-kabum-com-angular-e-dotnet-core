@@ -5,7 +5,10 @@
         <div class="row">
             <div class="card profile">
                 <div class="profile-image">
-                    <img src="{{ userLogged.imageUrl }}" alt="">
+                    <img *ngIf="userLogged.imageUrl" src="{{ userLogged.imageUrl }}" alt="" draggable="false">
+                    <img *ngIf="userLogged.imageUrl==null"
+                        src="https://pbs.twimg.com/profile_images/1465675326403629062/2O9dsfbU_400x400.jpg" alt="" draggable="false">
+                        
                 </div>
                 <div class="profile-info">
                     <strong>Bem-vindo, {{ userLogged.name }}</strong><br>
@@ -73,7 +76,7 @@
         <br>
         <br>
         <br>
-        
+
         <div class="row-content fix">
             <div class="row order-title">
                 <span class="material-icons">

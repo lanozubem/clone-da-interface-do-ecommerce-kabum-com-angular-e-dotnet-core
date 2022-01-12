@@ -15,7 +15,8 @@ namespace CloneKabum.API.Repositories
                 Id = 1,
                 Email = "zubemluano@gmail.com",
                 Name = "Luano",
-                Password = "loop"
+                Password = "loop",
+                ImageUrl = "https://media-exp1.licdn.com/dms/image/C4E03AQEU3PdkA8XZRA/profile-displayphoto-shrink_200_200/0/1641794881830?e=1647475200&v=beta&t=ddDT3O4-45ysFiPqAPj5Xwj1GTHqNQlYzzmbXJsPSWU"
             },
         };
 

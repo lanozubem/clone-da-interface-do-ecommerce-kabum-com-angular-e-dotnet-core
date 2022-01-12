@@ -26,6 +26,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MyAccountComponent } from './my-account/my-account.component';
 
 import { MyAccountSidenavComponent } from './my-account-sidenav/my-account-sidenav.component';
+import { LoginService } from './Services/login.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,7 @@ import { MyAccountSidenavComponent } from './my-account-sidenav/my-account-siden
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

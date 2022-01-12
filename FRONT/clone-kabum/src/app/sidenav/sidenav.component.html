@@ -11,7 +11,8 @@
                     </span>
                 </div>
 
-                <strong>Olá. Faça seu login</strong>
+                <strong *ngIf="!isAuthenticated">Olá. Faça seu login</strong>
+                <strong *ngIf="isAuthenticated">Olá. {{userLogged.name}}</strong>
 
                 <button (click)="sidenav.close()">
                     <span class="material-icons">
@@ -102,8 +103,11 @@
 
             <!-- BTNS -->
             <mat-action-list class="btns">
-                <button routerLink="login">LOGIN</button>
-                <button routerLink="login">CADASTRO</button>
+                <div class="btns" *ngIf="!userLogged">
+                    <button routerLink="login">LOGIN</button>
+                    <button routerLink="login">CADASTRO</button>
+                </div>
+                <button (click)="loggout()" *ngIf="userLogged">SAIR</button>
             </mat-action-list>
         </div>
     </mat-sidenav>

@@ -11,6 +11,8 @@
             <div class="logo-kbm">
                 <img src="https://logodownload.org/wp-content/uploads/2017/11/kabum-logo-0-1536x1536.png"
                     alt="Logo KaBuM!" title="KaBuM! Tecnologia e Games" routerLink="/">
+                <!-- <img src="https://logodownload.org/wp-content/uploads/2017/11/kabum-logo-0-1536x1536.png"
+                        alt="Logo KaBuM!" title="KaBuM! Tecnologia e Games" routerLink="/"> -->
             </div>
         </div>
         <!-- Buscar -->
@@ -25,10 +27,16 @@
                 </span>
             </div>
             <div class="login-logo-group">
-                <div>
+                <div *ngIf="!isAuthenticated">
                     <span>Faça <strong><a routerLink="login">Login</a></strong> ou</span>
                     <br />
                     <span>crie seu <strong><a routerLink="login">Cadastro</a></strong></span>
+                </div>
+                <div *ngIf="isAuthenticated">
+                    <span><strong>Olá, {{ userLogged.name }}</strong></span>
+                    <br />
+                    <span><a routerLink="./../minha-conta">MINHA CONTA</a> | <a style="cursor: pointer;"
+                            (click)="loggout()">SAIR</a></span>
                 </div>
             </div>
         </div>

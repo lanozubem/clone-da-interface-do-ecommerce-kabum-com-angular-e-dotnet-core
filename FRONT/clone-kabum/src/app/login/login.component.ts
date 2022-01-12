@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../Models/user';
 import { LoginService } from '../Services/login.service';
+import { SessionStorageService } from '../Services/session-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   user!: User;
   userRegister = {} as User;
 
+  /* Form Control */
   re_password: any;
   dataIsvalid = true;
   emailIsRegistered = false;
@@ -21,10 +23,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
+    private sessionStorage: SessionStorageService,
     private router: Router,
   ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    if (this.sessionStorage.get("isAuth") == "true") {
+      this.router.navigate(['/']);
+    }
     this.user = new User();
     this.userRegister = new User();
   }
@@ -35,13 +41,13 @@ export class LoginComponent implements OnInit {
       .subscribe(
         token => {
           this.loginService.setUserLogged(Object.assign(token));
-          this.loginService.userIsAuth = true;
+          this.loginService.setUserAuthenticated(true);
           this.dataIsvalid = true;
           this.router.navigate(['minha-conta']);
         },
         error => {
           this.dataIsvalid = false;
-          this.loginService.userIsAuth = true;
+          this.loginService.setUserAuthenticated(true);
         })
   }
 
@@ -49,7 +55,7 @@ export class LoginComponent implements OnInit {
   submitRegister(form: NgForm) {
     this.userRegister = form.value;
     if (this.userRegister.password != this.re_password) {
-      this.thePasswordsAreCorrect= false;
+      this.thePasswordsAreCorrect = false;
     } else {
       this.loginService.registerUser(this.userRegister)
         .subscribe(
@@ -57,6 +63,8 @@ export class LoginComponent implements OnInit {
             alert("Usuário registrado com sucesso!");
             this.emailIsRegistered = true;
             this.thePasswordsAreCorrect = true;
+            this.loginService.setUserLogged(Object.assign(data));
+            this.loginService.setUserAuthenticated(true);
             this.router.navigate(['minha-conta']);
           },
           error => {
@@ -66,5 +74,4 @@ export class LoginComponent implements OnInit {
         )
     }
   }
-
 }
