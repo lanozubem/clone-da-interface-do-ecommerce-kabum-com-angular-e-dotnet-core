@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyAccountComponent } from './my-account/my-account.component';
+import { MyDataComponent } from './my-data/my-data.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 
@@ -14,6 +15,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'minha-conta', component: MyAccountComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'minha-conta/meus-dados', component: MyDataComponent,
     canActivate: [AuthGuard]
   },
   { path: 'header', component: HeaderComponent },

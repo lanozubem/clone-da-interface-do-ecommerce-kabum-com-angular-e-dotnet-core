@@ -28,6 +28,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { MyAccountSidenavComponent } from './my-account-sidenav/my-account-sidenav.component';
 import { LoginService } from './Services/login.service';
 import { AuthGuard } from './guards/auth.guard';
+import { MyDataComponent } from './my-data/my-data.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AuthGuard } from './guards/auth.guard';
     LoginComponent,
     PageNotFoundComponent,
     MyAccountComponent,
-    MyAccountSidenavComponent
+    MyAccountSidenavComponent,
+    MyDataComponent
   ],
   imports: [
     BrowserModule,

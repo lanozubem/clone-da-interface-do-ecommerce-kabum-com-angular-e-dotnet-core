@@ -1,0 +1,156 @@
+.geral {
+    width: 1216px;
+    margin: 0 auto;
+    margin-bottom: 257px;
+}
+
+.container {
+    margin-top: 25px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.page-title {
+    padding-left: 20px;
+}
+
+.page-title h1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #42464D;
+    margin-top: 8px;
+}
+
+.page-title span {
+    color: #FF5101;
+    font-size: 35px;
+    margin-top: 1px;
+}
+
+.forms {
+    display: flex;
+}
+
+.form-item {
+    width: 572px;
+    background-color: white;
+    padding: 32px;
+    margin: 10px;
+}
+
+.form-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    padding: 0 12px;
+}
+
+.form-item-row button {
+    background-color: transparent;
+    font-weight: bold;
+    color: #FF5101;
+    border: 1px solid #FF5101;
+    width: 144px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #42464D;
+}
+
+.logo span {
+    color: #FF5101;
+    font-size: 30px;
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+button[type=submit] {
+    background-color: #FF5101;
+    color: white;
+    font-weight: bold;
+}
+
+/* MODEL */
+
+#background {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.card {
+    display: none;
+    width: 800px;
+    height: 460px;
+    padding: 32px;
+    font-size: 16px;
+    margin: 138px 312px;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card h5 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #42464D;
+}
+
+.card p {
+    margin-top: 20px;
+    margin-bottom: 17px;
+    font-size: 16px;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.card form input {
+    margin-bottom: 16px;
+    padding: 11px 16px;
+    border-radius: 3px;
+    border: 1px solid #565C69;
+    font-size: 14px;
+    outline: none;
+}
+
+.card form button {
+    width: 166px;
+    height: 48px;
+    border-radius: 4px;
+    border: transparent;
+    margin: auto;
+    margin-top: 22px;
+}
+
+.btn-close {
+    border: transparent;
+    background-color: transparent;
+    color: #FF8C40;
+    outline: none;
+    margin-right: 10px;
+}
+
+.btn-close span {
+    font-size: 14px !important;
+    outline: none;
+}
