@@ -78,8 +78,15 @@ header {
 }
 
 .login-logo-profile {
+    width: 40px;
     font-size: 33px;
     color: #C4C4C4;
+}
+
+.login-logo-profile img {
+    width: 100%;
+    border-radius: 100%;
+    border: 3px solid #347BBE;
 }
 
 .login-logo-group {
@@ -118,6 +125,6 @@ header {
     font-weight: 700;
     color: #FFF;
     text-decoration: none;
-    font-size:  14px;
+    font-size: 14px;
     text-align: center;
 }

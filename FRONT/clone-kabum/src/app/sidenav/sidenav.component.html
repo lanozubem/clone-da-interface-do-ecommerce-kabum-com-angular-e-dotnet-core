@@ -6,9 +6,10 @@
             <!-- SIDENAV USER -->
             <div class="sidenav-profile">
                 <div class="profile-icon">
-                    <span class="material-icons">
+                    <span *ngIf="!isAuthenticated" class="material-icons">
                         account_circle
                     </span>
+                    <img *ngIf="isAuthenticated" src="{{ userLogged.imageUrl }}" alt="">
                 </div>
 
                 <strong *ngIf="!isAuthenticated">Olá. Faça seu login</strong>

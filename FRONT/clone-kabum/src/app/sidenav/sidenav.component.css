@@ -6,7 +6,7 @@ mat-sidenav {
 mat-sidenav {
     padding: 20px;
     background-color: #0060B1;
-    width:350px;
+    width: 350px;
     position: fixed;
 }
 
@@ -54,12 +54,22 @@ mat-divider {
     right: 72%;
 }
 
+.profile-icon {
+    width: 45px;
+    margin-right: 12px;
+}
+
 .profile-icon span {
     font-size: 35px;
     color: #c4c4c49f;
     border: 1px solid #acacac;
     border-radius: 50%;
-    margin-right: 12px;
+}
+
+.profile-icon img {
+    width: 100%;
+    border-radius: 100%;
+    border: 3px solid #347BBE;
 }
 
 /* MANIPULANDO A APARENCIA DO SCROLL-Y */
@@ -85,6 +95,7 @@ mat-divider {
 .sidenav-list-item {
     margin: 10px 0;
 }
+
 .sidenav-list-item:hover {
     background-color: #0060B1;
 }
