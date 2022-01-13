@@ -3,6 +3,7 @@ export class User {
     name!: string;
     email!: string;
     password!: string;
+    phone!: string;
     imageUrl!: string;
     zip!: string;
     type!: number; 

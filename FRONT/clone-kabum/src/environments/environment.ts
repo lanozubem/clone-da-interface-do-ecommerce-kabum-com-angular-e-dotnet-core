@@ -7,6 +7,7 @@ export const environment = {
   apiBackEnd: "http://localhost:5000/api/v1/products",
   apiTokenLogin: "https://localhost:5001/api/v1/login",
   apiRegisterUser: "https://localhost:5001/api/v1/register",
+  apiUpdateUser: "https://localhost:5001",
 };
 
 /*

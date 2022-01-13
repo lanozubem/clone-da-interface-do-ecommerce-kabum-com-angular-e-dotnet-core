@@ -1,3 +1,8 @@
+<!-- 
+    OBS:
+        Talvez fosse melhor componentizar cada cecção dos formulários;
+ -->
+
 <app-my-account-sidenav></app-my-account-sidenav>
 <div class="geral">
     <div class="container">
@@ -15,25 +20,41 @@
                         <div>DADOS BÁSICOS</div>
                     </div>
 
-                    <button type="button" class="btn btn" (click)="openModal()">ALTERAR SENHA</button>
+                    <button type="button" class="btn btn" (click)="openModal(true)">ALTERAR SENHA</button>
                 </div>
 
-                <form>
+                <!-- FOM MEU DADOS -->
+
+                <form #fUpdate="ngForm" (submit)="updateProfile(fUpdate)">
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <input type="text" class="form-control" placeholder="Nome completo*"
-                                value="{{ userLogged.name }}">
+                            <input [(ngModel)]="userLogged.name" #fName="ngModel" type="text" name="name"
+                                class="form-control" placeholder="Nome completo*" required>
+                        </div>
+                        <!-- if input name is empty -->
+                        <div class="invalidData" *ngIf="fName.invalid && fName.touched">
+                            <span class="material-icons">warning</span>
+                            Por favor, preencha com seu nome.
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <input [(ngModel)]="userLogged.email" type="email" name="email" class="form-control"
+                                disabled>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="email" class="form-control" value="{{ userLogged.email }}" disabled>
+                            <input [(ngModel)]="userLogged.phone" type="tel" name="phone" class="form-control"
+                                placeholder="Telefone para contato">
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="tel" class="form-control" placeholder="Telefone para contato">
+                            <input [(ngModel)]="userLogged.imageUrl" type="text" name="imageUrl" class="form-control"
+                                placeholder="Url da imagem para o perfil">
                         </div>
                     </div>
-                    <button type="submit" class="btn ">SALVAR</button>
+                    <button type="submit" class="btn" [disabled]="!fUpdate.valid">SALVAR</button>
                 </form>
             </div>
+
+            <!-- FORM ENDEREÇOS -->
 
             <div class="form-item">
                 <form>
@@ -45,13 +66,47 @@
                             ENDEREÇOS
                         </div>
                     </div>
+
                     <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <input type="text" class="form-control" placeholder="Endereço">
+                        <div class="modal-form form-row">
+                            <div class="form-group col-md-12 sub-title-form-address">
+                                <label for="#">Cadastrar Endereço</label>
+                                <button class="btn-close" (click)="openModal(false)">
+                                    <span class="material-icons">
+                                        close
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" placeholder="CEP*">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Identificação*">
+                            </div>
+                            <div class="form-group col-md-9">
+                                <input type="text" class="form-control" placeholder="Logradouro*">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <input type="text" class="form-control" placeholder="Número*">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Complemento">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Referencia">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Bairro*">
+                            </div>
+                            <div class="form-group col-md-9">
+                                <input type="text" class="form-control" placeholder="Cidade*">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <input type="text" class="form-control" placeholder="UF*">
+                            </div>
+                            <button type="submit" class="btn btn">SALVAR ENDEREÇO</button>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn">SALVAR</button>
                 </form>
             </div>
         </div>
@@ -63,19 +118,57 @@
     <div class="card" id="card">
         <div class="card-title">
             <h5>ALTERAR SENHA</h5>
-            <button class="btn-close" (click)="closeModal()">
+            <button class="btn-close" (click)="openModal(false)">
                 <span class="material-icons">
                     close
                 </span>
             </button>
         </div>
         <p>Informe a nova senha para a sua conta</p>
-        <form>
-            <input type="text" placeholder="Digite a sua senha atual *">
-            <input type="text" placeholder="Digite a nova senha *">
-            <input type="text" placeholder="Confirme a nova senha *">
-    
-            <button class="btn" type="submit" disabled>SALVAR</button>
+
+        <!-- FORM NEW PASSWORD -->
+
+        <form #fPassword="ngForm" (submit)="updateProfile(fPassword)">
+            <input [(ngModel)]="formPassword.oldPassword" name="password" type="text"
+                placeholder="Digite a sua senha atual *" #pAtual="ngModel" required>
+            <!-- if o campo não for preenchido -->
+            <div class="invalidData" *ngIf="pAtual.invalid && pAtual.touched">
+                <span class="material-icons">warning</span>
+                Por favor, preencha com sua senha atual.
+            </div>
+            <!-- if a senha inputada for incorreta -->
+            <div class="invalidData" *ngIf="thePasswordAreCorrect==false">
+                <span class="material-icons">warning</span>
+                Senha incorreta!
+            </div>
+
+            <input [(ngModel)]="formPassword.newPassword" name="newPassword" type="text"
+                placeholder="Digite a nova senha *" #newP="ngModel" required>
+            <!-- if o campo não for preenchido -->
+            <div class="invalidData" *ngIf="newP.invalid && newP.touched">
+                <span class="material-icons">warning</span>
+                Por favor, preencha com a nova senha.
+            </div>
+            <!-- if os passwords não forem iguais -->
+            <div class="invalidData" *ngIf="thePasswordsAreCorrect==false">
+                <span class="material-icons">warning</span>
+                Os campos não coincidem.
+            </div>
+
+            <input [(ngModel)]="formPassword.reNewPassword" name="reNewPassword" type="text"
+                placeholder="Confirme a nova senha *" #reNewP="ngModel" required>
+            <!-- if o campo não for preenchido -->
+            <div class="invalidData" *ngIf="reNewP.invalid && reNewP.touched">
+                <span class="material-icons">warning</span>
+                Por favor, confirme a nova senha.
+            </div>
+            <!-- if os passwords não forem iguais -->
+            <div class="invalidData" *ngIf="thePasswordsAreCorrect==false">
+                <span class="material-icons">warning</span>
+                Os campos não coincidem.
+            </div>
+
+            <button class="btn" id="btn-save" type="submit" [disabled]="!fPassword.valid">SALVAR</button>
         </form>
     </div>
 </div>

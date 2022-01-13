@@ -13,6 +13,7 @@ export class LoginService {
 
   private readonly urlToken = environment["apiTokenLogin"];
   private readonly urlRegisterUser = environment["apiRegisterUser"];
+  private readonly urlUpdateUser = environment["apiUpdateUser"];
 
   private userIsAuth = false;
   private userLogged: any;
@@ -41,6 +42,12 @@ export class LoginService {
   /* REGISTER */
   registerUser(user: User): Observable<User> {
     return this.httpClient.post<User>(this.urlRegisterUser, JSON.stringify(user), this.httpOptions)
+  }
+
+  /* UPDATE */
+  updateUser(user: User): Observable<User> {
+    console.log(user);
+    return this.httpClient.put<User>(this.urlUpdateUser + "/" + user.id, JSON.stringify(user), this.httpOptions)
   }
 
   userIsAuthenticated(): boolean {

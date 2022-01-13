@@ -23,6 +23,12 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
     this.userLogged = JSON.parse(this.sessionStorage.get("userLogged"));
+
+    // No e-commerce KaBuM! o nome no perfil não engloba o sobrenome
+    // então, aqui obtemos apenas o primeiro nome
+    let name = this.userLogged.name;
+    this.userLogged.name = this.userLogged.name.slice(0, name.indexOf(' '));;
+
     this.sessionStorage.get("isAuth") == "true" ? this.isAuthenticated = true : this.isAuthenticated = false;
   }
 

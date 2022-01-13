@@ -1,13 +1,16 @@
 .geral {
     width: 1216px;
     margin: 0 auto;
-    margin-bottom: 257px;
+    margin-bottom: 30px;
 }
 
-.container {
-    margin-top: 25px;
-    padding: 0;
-    overflow: hidden;
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1360px;
+        margin-top: 25px;
+        margin-left: 15px;
+        overflow: hidden;
+    }
 }
 
 .page-title {
@@ -77,7 +80,7 @@ button[type=submit] {
     font-weight: bold;
 }
 
-/* MODEL */
+/* MODAL */
 
 #background {
     display: none;
@@ -147,10 +150,41 @@ button[type=submit] {
     background-color: transparent;
     color: #FF8C40;
     outline: none;
-    margin-right: 10px;
+    border: none !important;
 }
 
 .btn-close span {
-    font-size: 14px !important;
+    font-size: 24px !important;
     outline: none;
+}
+
+.btn {
+    margin-top: 20px;
+    float: right;
+}
+
+#btn-save {
+    margin-top: 48px;
+}
+
+/* MODAL FORM */
+.modal-form {
+    background-color: #FAFAFB;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.sub-title-form-address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0;
+    padding-top: 30px;
+}
+
+form:nth-child(1) button {
+    background-color: transparent;
+    border: 1px solid #FF5101;
+    color: #FF5101;
+    margin-left: 5px;
 }

@@ -8,12 +8,13 @@ namespace CloneKabum.API.Repositories
     {
         private static int _nextInt = 2;
 
-        public static IList<User> Users = new List<User>
+        public static List<User> Users = new List<User>
         {
             new User
             {
                 Id = 1,
                 Email = "zubemluano@gmail.com",
+                Phone = "81 91234-5678",
                 Name = "Luano",
                 Password = "loop",
                 ImageUrl = "https://media-exp1.licdn.com/dms/image/C4E03AQEU3PdkA8XZRA/profile-displayphoto-shrink_200_200/0/1641794881830?e=1647475200&v=beta&t=ddDT3O4-45ysFiPqAPj5Xwj1GTHqNQlYzzmbXJsPSWU"
@@ -33,5 +34,14 @@ namespace CloneKabum.API.Repositories
         }
 
         public User Get(int id) => Users.FirstOrDefault(u => u.Id == id);
+
+        public void Update(User user){
+            var index = Users.FindIndex(u => u.Id == user.Id);
+
+            if(index == -1)
+                return;
+            
+            Users[index] = user;
+        }
     }
 }

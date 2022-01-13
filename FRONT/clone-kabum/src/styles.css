@@ -17,3 +17,20 @@ html, body {
 body {
     margin: 0;
 }
+
+/* Validações dos formulários*/
+.ng-invalid.ng-touched:not(form) {
+    border: 2px solid #E72626 !important;
+}
+
+.invalidData {
+    color: #E72626;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.invalidData span {
+    margin-right: 5px;
+}

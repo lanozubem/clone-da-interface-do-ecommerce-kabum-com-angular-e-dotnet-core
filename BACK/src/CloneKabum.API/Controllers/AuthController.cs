@@ -52,5 +52,21 @@ namespace CloneKabum.API.Controllers
             }
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,[FromBody] User user)
+        {
+            var userRepository = new UserRepository();
+            if (id != user.Id)
+                return BadRequest();
+
+            var existingUser = userRepository.Get(id);
+
+            if (existingUser is null)
+                return NotFound(new { Message = "Usuário não encontrado!" });
+
+            userRepository.Update(user);
+
+            return NoContent();
+        }
     }
 }
