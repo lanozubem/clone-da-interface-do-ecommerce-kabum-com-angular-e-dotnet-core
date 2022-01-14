@@ -72,7 +72,6 @@ export class LoginService {
     if (this.userIsAuth) {
       this.sessionStorage.setObject("userLogged", this.getUserLogged());
       this.sessionStorage.set("isAuth", "true");
-      this.refreshPage();
     } else {
       this.sessionStorage.clear();
     }
@@ -84,7 +83,7 @@ export class LoginService {
     this.router.navigate(['/']);
   }
 
-  refreshPage(){
+  refreshPage() {
     location.reload(); // essa talvez não seja a melhor maneira de recarregar os dados do usuário, mas enquanto não aprendo NGRX será essa a solução.
   }
 }

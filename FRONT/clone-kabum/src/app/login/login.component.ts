@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
           this.loginService.setUserAuthenticated(true);
           this.dataIsvalid = true;
           this.router.navigate(['minha-conta']);
+          this.loginService.refreshPage()
         },
         error => {
           this.dataIsvalid = false;
