@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './Services/login.service';
+import { SessionStorageService } from './Services/session-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,6 @@ export class AppComponent {
 
   title = 'clone-kabum';
 
-  constructor(
-  ) { }
+  constructor(private sessionStorage: SessionStorageService) { /* this.sessionStorage.clear() */ }
 
 }

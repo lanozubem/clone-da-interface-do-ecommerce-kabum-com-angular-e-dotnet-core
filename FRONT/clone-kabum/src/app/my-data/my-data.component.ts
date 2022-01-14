@@ -55,10 +55,9 @@ export class MyDataComponent implements OnInit {
         Atualizações futuras poderão ser adotadas.  
   */
   updateProfile(form: NgForm) {
-
     if (window.confirm("Confirmar alterações no perfil?")) {
       if (form.value.password == undefined) {
-          // Atualizará os dados pessoais
+        // Atualizará os dados pessoais
         this.userLogged.name = form.value.name;
         this.userLogged.phone = form.value.phone;
         this.userLogged.imageUrl = form.value.imageUrl;
@@ -69,6 +68,7 @@ export class MyDataComponent implements OnInit {
             this.sessionStorage.clear();
             this.sessionStorage.setObject("userLogged", this.userLogged);
             this.sessionStorage.set("isAuth", "true");
+            location.reload(); // essa talvez não seja a melhor maneira de recarregar os dados do usuário, mas enquanto não aprendo NGRX será essa a solução.
             alert("Perfil atualizado com sucesso!");
           },
           () => {
@@ -92,22 +92,22 @@ export class MyDataComponent implements OnInit {
             */
 
             this.userLogged.password = form.value.newPassword; // Aqui atualizamos o objeto com a nova senha.
-             
-             this.loginService.updateUser(this.userLogged).subscribe(
-               isUpdated => {
-                 // remove da memória o usuario com os dados
-                 // antigos e insere o usuario com os dados atualizados
-                 this.sessionStorage.clear();
-                 this.sessionStorage.setObject("userLogged", this.userLogged);
-                 this.sessionStorage.set("isAuth", "true");
-                 alert("Senha atualizada com sucesso!");
-                 this.openModal(false);
-                 form.reset();
-               },
-               () => {
-                 alert("Erro ao atualizar Senha!");
-               }
-             );
+
+            this.loginService.updateUser(this.userLogged).subscribe(
+              isUpdated => {
+                // remove da memória o usuario com os dados
+                // antigos e insere o usuario com os dados atualizados
+                this.sessionStorage.clear();
+                this.sessionStorage.setObject("userLogged", this.userLogged);
+                this.sessionStorage.set("isAuth", "true");
+                alert("Senha atualizada com sucesso!");
+                this.openModal(false);
+                form.reset();
+              },
+              () => {
+                alert("Erro ao atualizar Senha!");
+              }
+            );
           } else {
             this.thePasswordsAreCorrect = false;
           }

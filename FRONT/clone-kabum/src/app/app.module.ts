@@ -30,6 +30,7 @@ import { LoginService } from './Services/login.service';
 import { AuthGuard } from './guards/auth.guard';
 import { MyDataComponent } from './my-data/my-data.component';
 import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.state';
 
 @NgModule({
   declarations: [

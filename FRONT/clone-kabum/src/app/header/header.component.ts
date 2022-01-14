@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
 
   isAuthenticated = false;
   userLogged!: User;
-  refresh = false;
 
   constructor(
     private router: Router,
@@ -27,12 +26,10 @@ export class HeaderComponent implements OnInit {
     this.userLogged = JSON.parse(this.sessionStorage.get("userLogged"));
     if (this.sessionStorage.get("isAuth") == "true") {
       this.isAuthenticated = true;
-
       // No e-commerce KaBuM! o nome no perfil não engloba o sobrenome
       // então, aqui obtemos apenas o primeiro nome
-      
       let name = this.userLogged.name;
-      this.userLogged.name = this.userLogged.name.slice(0, name.indexOf(" "));;
+      this.userLogged.name = this.userLogged.name.slice(0, name.concat(" ").indexOf(" "));
     } else {
       this.isAuthenticated = false;
     }
