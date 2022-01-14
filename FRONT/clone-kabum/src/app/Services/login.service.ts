@@ -46,7 +46,6 @@ export class LoginService {
 
   /* UPDATE */
   updateUser(user: User): Observable<User> {
-    console.log(user);
     return this.httpClient.put<User>(this.urlUpdateUser + "/" + user.id, JSON.stringify(user), this.httpOptions)
   }
 

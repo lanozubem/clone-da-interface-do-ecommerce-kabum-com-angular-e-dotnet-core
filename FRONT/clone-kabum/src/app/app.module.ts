@@ -29,6 +29,7 @@ import { MyAccountSidenavComponent } from './my-account-sidenav/my-account-siden
 import { LoginService } from './Services/login.service';
 import { AuthGuard } from './guards/auth.guard';
 import { MyDataComponent } from './my-data/my-data.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { MyDataComponent } from './my-data/my-data.component';
     MatTooltipModule,
 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]

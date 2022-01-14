@@ -30,9 +30,9 @@ export class HeaderComponent implements OnInit {
 
       // No e-commerce KaBuM! o nome no perfil não engloba o sobrenome
       // então, aqui obtemos apenas o primeiro nome
-      let name = this.userLogged.name;
-      this.userLogged.name = this.userLogged.name.slice(0, name.indexOf(' '));;
       
+      let name = this.userLogged.name;
+      this.userLogged.name = this.userLogged.name.slice(0, name.indexOf(" "));;
     } else {
       this.isAuthenticated = false;
     }
@@ -46,11 +46,5 @@ export class HeaderComponent implements OnInit {
 
   loggout() {
     this.loginService.loggout();
-  }
-
-  refreshC() {
-    if (this.refresh) {
-      this.ngOnInit();
-    }
   }
 }
