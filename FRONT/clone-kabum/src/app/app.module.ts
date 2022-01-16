@@ -50,7 +50,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     MyAccountComponent,
     MyAccountSidenavComponent,
     MyDataComponent,
-    FavoritosComponent
+    FavoritosComponent,
   ],
   imports: [
     BrowserModule,

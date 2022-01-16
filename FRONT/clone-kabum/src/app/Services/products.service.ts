@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../Models/product';
@@ -10,8 +10,12 @@ import { Product } from '../Models/product';
 export class ProductsService {
 
   private API = "https://localhost:5001/api/v1/products";
+
+  // será unificado em futuras atualizações
   private readonly urlGetFavorits = environment["apiGetFavorits"];
   private readonly urlAddFavorit = environment["apiAddFavorit"];
+
+  @Output() sendNumFavorit = new EventEmitter<number>();
 
   constructor(
     private http: HttpClient
@@ -56,4 +60,8 @@ export class ProductsService {
     return this.http.delete<Product>(this.urlAddFavorit + '/' + userId + "?userId=" + userId + "&productId=" + productId, this.httpOptions)
   }
 
+
+  getNumFavorits(num: number){
+    this.sendNumFavorit.emit(num);
+  }
 }

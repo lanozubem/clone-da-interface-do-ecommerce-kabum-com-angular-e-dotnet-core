@@ -12,6 +12,7 @@ export class FavoritosComponent implements OnInit {
 
   produtos: Array<Product> = new Array();
   id: number = 0;
+
   constructor(
     private produtosService: ProductsService,
     private sessionStorage: SessionStorageService
@@ -27,6 +28,7 @@ export class FavoritosComponent implements OnInit {
       this.produtosService.getFavorits(userLogged.id).subscribe(
         f => {
           this.produtos = f;
+          this.produtosService.getNumFavorits(f.length);
         },
         () => alert("Erro ao estabelecer conexão com a base de dados!")
       )
@@ -37,7 +39,7 @@ export class FavoritosComponent implements OnInit {
     let userLogged = JSON.parse(this.sessionStorage.get("userLogged"));
     if (userLogged.id != undefined) {
       this.produtosService.removeFavoriteProduct(userLogged.id, id).subscribe(
-        () => this.getFavorits(),
+        () => { this.getFavorits();},
         () => alert("Erro ao estabelecer conexão com a base de dados!")
       )
     }

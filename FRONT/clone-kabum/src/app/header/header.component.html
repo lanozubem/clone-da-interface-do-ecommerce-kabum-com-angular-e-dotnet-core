@@ -48,7 +48,12 @@
                     support_agent
                 </span>
             </a>
-            <a routerLink="minha-conta/favoritos" matBadgeColor="warn" [matBadge]="numFavorits">
+            <a routerLink="minha-conta/favoritos" matBadgeColor="warn" [matBadge]="numFavorits" *ngIf="numFavorits!=0">
+                <span class="material-icons" title="Favoritos">
+                    favorite
+                </span>
+            </a>
+            <a routerLink="minha-conta/favoritos" matBadgeColor="warn" *ngIf="numFavorits==0">
                 <span class="material-icons" title="Favoritos">
                     favorite
                 </span>

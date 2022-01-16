@@ -1,139 +1,149 @@
 mat-sidenav-content,
 mat-sidenav {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 mat-sidenav {
-    padding: 20px;
-    background-color: #0060B1;
-    width: 350px;
-    position: fixed;
+  padding: 20px;
+  background-color: #0060B1;
+  width: 350px;
+  position: fixed;
 }
 
 mat-sidenav button {
-    border: none;
-    background-color: transparent;
-    color: #CCDFEF;
-    outline: none;
-    font-size: 20px;
+  border: none;
+  background-color: transparent;
+  color: #CCDFEF;
+  outline: none;
+  font-size: 20px;
 }
 
 mat-divider {
-    background-color: #80B0D8;
-    width: 85%;
-    margin-left: 15px;
+  background-color: #80B0D8;
+  width: 85%;
+  margin-left: 15px;
 }
 
 .sidenav,
 .sidenav-profile,
 .sidenav-profile-button,
 .btns {
-    display: flex;
+  display: flex;
 }
 
 .sidenav {
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
 /* SIDENAV USER */
 .sidenav-profile {
-    overflow: hidden;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 20px;
-    color: #FFF;
-    padding: 10px 0;
-    justify-content: flex-start;
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 20px;
+  color: #FFF;
+  padding: 10px 0;
+  justify-content: flex-start;
 }
 
 .sidenav-profile button {
-    align-items: center;
-    position: fixed;
-    margin-left: 25%;
+  align-items: center;
+  position: fixed;
+  margin-left: 25%;
 }
 
 .profile-icon {
-    width: 40px;
-    margin-right: 12px;
+  width: 40px;
+  margin-right: 12px;
 }
 
 .profile-icon span {
-    font-size: 35px;
-    color: #c4c4c49f;
-    border: 1px solid #acacac;
-    border-radius: 50%;
+  font-size: 35px;
+  color: #c4c4c49f;
+  border: 1px solid #acacac;
+  border-radius: 50%;
 }
 
 .profile-icon img {
-    width: 100%;
-    border-radius: 100%;
-    border: 3px solid #347BBE;
+  width: 100%;
+  border-radius: 100%;
+  border: 3px solid #347BBE;
 }
 
 /* MANIPULANDO A APARENCIA DO SCROLL-Y */
 ::-webkit-scrollbar-track {
-    background-color: #1A70B9;
+  background-color: #1A70B9;
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #80B0D8;
+  background: #80B0D8;
 }
 
 /* LISTA DE NAVEGAÇÃO DA SIDENAV  */
 .sidenav-list {
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    overflow-x: hidden !important;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
 .sidenav-list-item {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .sidenav-list-item:hover {
-    background-color: #0060B1;
+  background-color: #0060B1;
+  cursor: not-allowed;
 }
 
 .sidenav-list-item a {
-    color: #FFF;
-    font-size: 14px;
-    font-weight: 400;
-    width: 100%;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  cursor: not-allowed;
+}
+
+
+.sidenav-list-item:nth-child(1):hover,
+.sidenav-list-item:nth-child(1) a,
+.sidenav-list-item:nth-child(3):hover,
+.sidenav-list-item:nth-child(3) a {
+    cursor: pointer;
 }
 
 .sidenav-list-item span {
-    color: #FFF;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: 400;
-    margin-right: 15px;
+  color: #FFF;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 400;
+  margin-right: 15px;
 }
 
 /* BTNS */
 .btns {
-    padding: 10px;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 5%;
+  padding: 10px;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 5%;
 }
 
 .btns button {
-    font-weight: bold;
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
 }
 
 .btns button:nth-child(1) {
-    background-color: #FF6500;
-    color: White;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin-bottom: 10px;
+  background-color: #FF6500;
+  color: White;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
 }
