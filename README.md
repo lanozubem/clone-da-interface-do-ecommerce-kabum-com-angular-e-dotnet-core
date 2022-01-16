@@ -9,6 +9,12 @@ Criando um APP de cadastro em memória utilizando .Net Core e Angular
 
 **Linkedin**: https://www.linkedin.com/in/luano-zub%C3%A9m-919104204/
 
+## Tecnologias
+- .NET CORE;
+- Angular;
+- Angular Material;
+- Bootstrap;
+
 ### O que você irá encontrar ao executar este projeto?
 
 1. O usuário pode registra-se no sistema
