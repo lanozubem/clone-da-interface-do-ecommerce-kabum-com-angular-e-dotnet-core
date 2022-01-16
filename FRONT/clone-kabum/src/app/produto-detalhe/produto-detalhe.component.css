@@ -35,7 +35,6 @@
     padding: 10px 0;
 }
 
-.product-image,
 .banner-item:nth-child(1),
 .no-product,
 .no-product form {
@@ -45,7 +44,10 @@
 
 
 .product-image {
+    display: flex;
+    align-items: center;
     overflow: hidden;
+    flex-direction: column;
     justify-content: center;
 }
 

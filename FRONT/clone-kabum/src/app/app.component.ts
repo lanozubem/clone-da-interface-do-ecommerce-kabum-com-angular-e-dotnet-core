@@ -11,7 +11,7 @@ export class AppComponent {
 
   title = 'clone-kabum';
 
-  // caso a aplicação quebre descomente o comando no contructor
+  // caso a aplicação quebre, descomente abaixo o comando no contructor.
   constructor(private sessionStorage: SessionStorageService) { /* this.sessionStorage.clear() */ }
 
 }

@@ -3,6 +3,7 @@ import { EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Product } from '../Models/product';
 import { User } from '../Models/user';
 import { SessionStorageService } from './session-storage.service';
 
@@ -86,4 +87,5 @@ export class LoginService {
   refreshPage() {
     location.reload(); // essa talvez não seja a melhor maneira de recarregar os dados do usuário, mas enquanto não aprendo NGRX será essa a solução.
   }
+
 }

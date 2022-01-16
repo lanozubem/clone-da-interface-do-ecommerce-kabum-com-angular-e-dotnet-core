@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +20,10 @@ const routes: Routes = [
   },
   {
     path: 'minha-conta/meus-dados', component: MyDataComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'minha-conta/favoritos', component: FavoritosComponent,
     canActivate: [AuthGuard]
   },
   { path: 'header', component: HeaderComponent },

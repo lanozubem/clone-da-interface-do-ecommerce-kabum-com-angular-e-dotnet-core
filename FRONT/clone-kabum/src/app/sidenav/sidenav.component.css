@@ -51,11 +51,11 @@ mat-divider {
 .sidenav-profile button {
     align-items: center;
     position: fixed;
-    right: 72%;
+    margin-left: 25%;
 }
 
 .profile-icon {
-    width: 45px;
+    width: 40px;
     margin-right: 12px;
 }
 

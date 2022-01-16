@@ -8,6 +8,8 @@ export const environment = {
   apiTokenLogin: "https://localhost:5001/api/v1/login",
   apiRegisterUser: "https://localhost:5001/api/v1/register",
   apiUpdateUser: "https://localhost:5001",
+  apiGetFavorits: "https://localhost:5001/api/v1/Favorite",
+  apiAddFavorit: "https://localhost:5001/api/v1/Favorite",
 };
 
 /*

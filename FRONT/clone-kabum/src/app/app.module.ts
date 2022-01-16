@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 
 /* Application Components */
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -31,6 +32,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { MyDataComponent } from './my-data/my-data.component';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './store/app.state';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { appReducer } from './store/app.state';
     PageNotFoundComponent,
     MyAccountComponent,
     MyAccountSidenavComponent,
-    MyDataComponent
+    MyDataComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { appReducer } from './store/app.state';
     MatSidenavModule,
     MatListModule,
     MatTooltipModule,
+    MatBadgeModule,
 
     FormsModule,
     HttpClientModule,

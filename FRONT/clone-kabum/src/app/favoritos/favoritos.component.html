@@ -1,0 +1,49 @@
+<div class="geral">
+    <app-my-account-sidenav></app-my-account-sidenav>
+
+    <div class="row title">
+        <i class="bi bi-suit-heart-fill"></i>
+        <span>FAVORITOS</span>
+    </div>
+
+    <div class="content" *ngIf="produtos.length>0">
+        <mat-list *ngFor="let produto of produtos" class="listaFavoritos">
+            <mat-list-item>
+                <div class="listaFavoritosItem" [routerLink]="['../../produto', produto.id]">
+                    <div class="listaFavoritosItemImagem">
+                        <img src="{{ produto.imageUrl }}" title="{{ produto.name }}">
+                    </div>
+                    <div class="listaFavoritosItemName">
+                        <span>{{ produto.name }}</span>
+                    </div>
+                </div>
+                <div class="listaFavoritosItemPrice">
+                    <span>R$ {{ produto.oldPrice }}</span>
+                    <span>R$ {{ produto.price }}</span>
+                    <p>À VISTA</p>
+                </div>
+                <div class="listaFavoritosButtons">
+                    <button>
+                        <span class="material-icons">
+                            shopping_cart
+                        </span>
+                        COMPRAR
+                    </button>
+                    <button>
+                        <span class="material-icons" (click)="removeFavoriteProduct(produto.id)">
+                            delete
+                        </span>
+                    </button>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </div>
+
+    <div class="back-to-home" *ngIf="produtos.length==0">
+        <span>Você não favoritou nenhum produto.</span>
+        <button routerLink="/">
+            VOLTAR PARA HOME
+        </button>
+    </div>
+</div>

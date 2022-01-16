@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace CloneKabum.API.Models
 {
     public class User
@@ -8,5 +10,6 @@ namespace CloneKabum.API.Models
         public string Phone { get; set; }
         public string Password { get; set; }
         public string ImageUrl { get; set; }
+        public List<Product> ProductFavorit { get; set; }
     }
 }

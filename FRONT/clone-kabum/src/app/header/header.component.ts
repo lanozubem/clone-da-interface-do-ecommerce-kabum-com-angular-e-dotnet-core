@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
 
   isAuthenticated = false;
   userLogged!: User;
-
+  numFavorits = 5;
+  
   constructor(
     private router: Router,
     private loginService: LoginService,
