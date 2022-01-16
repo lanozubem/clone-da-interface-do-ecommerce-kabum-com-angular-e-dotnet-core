@@ -64,3 +64,14 @@ Segue uma lista do que aprendi na DIO e também enquanto pesquisava soluções p
 - Criação e utilização de rotas em Angular;
 - Melhor compreensão em guardas de rotas;
 - SessionStorage e Melhorias nas Habilidades em HTML e CSS;
+
+### Referências
+
+- https://web.dio.me/home
+- https://loiane.training/curso/angular
+- https://warcontent.com/angular-localstorage/#comment-41706
+- https://maffonso.medium.com/angular-8-intera%C3%A7%C3%A3o-entre-componentes-cf19b46e624e
+- http://www.macoratti.net/17/06/c_listas1.htm
+- https://lucas-eschechola.medium.com/autentica%C3%A7%C3%A3o-em-apis-utilizando-jwt-e-asp-net-core-2708174c90d4
+- https://www.youtube.com/playlist?list=PLx4x_zx8csUgop9qBqm6ReuNa3XraZBrc
+- https://medium.com/@fernandoevangelista_28291/consumindo-api-rest-com-httpclient-no-angular-8-62c5d733ffb6
