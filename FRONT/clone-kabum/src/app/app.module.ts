@@ -33,6 +33,7 @@ import { MyDataComponent } from './my-data/my-data.component';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './store/app.state';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     MyAccountSidenavComponent,
     MyDataComponent,
     FavoritosComponent,
+    CreditsComponent,
   ],
   imports: [
     BrowserModule,

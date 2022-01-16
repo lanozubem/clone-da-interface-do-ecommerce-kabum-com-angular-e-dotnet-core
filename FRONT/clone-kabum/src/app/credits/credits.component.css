@@ -1,0 +1,47 @@
+.inf {
+  width: 600px;
+  background-color: rgb(240, 21, 21);
+  color: blue;
+  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+  font-weight: 700;
+  z-index: 20;
+  position: absolute;
+  transform: rotate(45deg);
+  margin-left: 65%;
+  opacity: 90%;
+  transition: .5s;
+}
+
+.inf:hover {
+  opacity: 100%;
+  background-color: #B22222;
+  transition: .5s;
+}
+
+.inf-item {
+  width: 50%;
+  margin: auto;
+  margin-left: 185px;
+}
+
+.inf-social {
+  width: 50%;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.inf-social i {
+  font-size: 20px;
+  margin: 2px;
+  color: blue;
+}
+
+.closeCredits {
+  border: none;
+  background-color: transparent;
+  color: white;
+  margin: 10px auto 0;
+  text-align: center;
+}
