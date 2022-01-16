@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this.sessionStorage.get("isAuth") == "true") {
-      this.router.navigate(['/']);
-    }
     this.user = new User();
     this.userRegister = new User();
+    if (this.sessionStorage.get("isAuth") == "true") {
+      console.log(this.sessionStorage)
+      this.router.navigate(['/']);
+    }
   }
 
   /* LOGAR */

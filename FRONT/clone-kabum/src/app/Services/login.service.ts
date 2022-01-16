@@ -2,8 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { Product } from '../Models/product';
+import { environment } from 'src/environments/environment'
 import { User } from '../Models/user';
 import { SessionStorageService } from './session-storage.service';
 
@@ -71,8 +70,10 @@ export class LoginService {
 
   private initializerValues() {
     if (this.userIsAuth) {
-      this.sessionStorage.setObject("userLogged", this.getUserLogged());
-      this.sessionStorage.set("isAuth", "true");
+      if (this.userLogged!=null || this.userLogged!=undefined) {
+        this.sessionStorage.setObject("userLogged", this.getUserLogged());
+        this.sessionStorage.set("isAuth", "true");
+      }
     } else {
       this.sessionStorage.clear();
     }
