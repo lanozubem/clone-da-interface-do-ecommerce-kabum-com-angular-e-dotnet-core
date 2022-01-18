@@ -1,7 +1,7 @@
 .inf {
   width: 600px;
-  background-color: rgb(240, 21, 21);
-  color: blue;
+  background-color: black;
+  color: orangered;
   padding: 10px;
   padding-top: 30px;
   text-align: center;
@@ -10,20 +10,21 @@
   position: absolute;
   transform: rotate(45deg);
   margin-left: 65%;
-  opacity: 90%;
+  opacity: 70%;
   transition: .5s;
 }
 
 .inf:hover {
   opacity: 100%;
-  background-color: #B22222;
+  background-color: #131418;
   transition: .5s;
 }
 
 .inf-item {
   width: 50%;
   margin: auto;
-  margin-left: 185px;
+  margin-left: 180.5px;
+  margin-top: 15px;
 }
 
 .inf-social {
@@ -35,13 +36,13 @@
 .inf-social i {
   font-size: 20px;
   margin: 2px;
-  color: blue;
+  color: orangered;
 }
 
 .closeCredits {
   border: none;
   background-color: transparent;
-  color: white;
+  color: orangered;
   margin: 10px auto 0;
   text-align: center;
 }
